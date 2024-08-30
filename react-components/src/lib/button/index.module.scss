@@ -1,0 +1,73 @@
+.btn {
+  $this: &;
+  @apply relative uppercase m-auto text-primary font-bold rounded-full whitespace-nowrap;
+
+  &__ripple {
+    @apply block absolute inset-0 z-10 overflow-hidden;
+    transform: translateZ(0);
+    border-radius: inherit;
+
+    & span {
+      @apply block w-full h-full;
+      transform: translateY(101%);
+      background: currentColor;
+      border-radius: 50% 50% 0 0;
+      transition: transform .5s cubic-bezier(.4,0,0,1),border-radius .5s cubic-bezier(.4,0,0,1)
+    }
+  }
+
+  @media (pointer: fine) {
+    &:hover &__ripple span {
+      border-radius:0;
+      transform: translateY(0);
+      transition-duration: .5s,.9s
+    }
+
+    &:hover {
+      transform:scaleX(1.02);
+      transition: transform .6s cubic-bezier(.34,5.56,.64,1);
+
+      #{$this}__text {
+        @apply -translate-y-full
+      }
+    }
+  }
+
+  &__text {
+    @apply relative translate-y-0 z-20;
+    transition: transform .8s cubic-bezier(.16,1,.3,1);
+    &:after {
+      content: attr(data-text);
+      @apply absolute top-0 left-0 right-0;
+      transform: translateY(100%);
+      color: var(--btn-highlight-color);
+    }
+  }
+}
+
+.btn--small {
+  @apply text-[16px] py-4 px-6;
+}
+
+.btn--large {
+  @apply text-16*36 p-4 lg:p-9;
+}
+
+.btn--primary {
+  --btn-highlight-color: #fff;
+  @apply bg-woodsmoke-50 text-primary;
+}
+
+.btn--dark {
+  --btn-highlight-color: #1c1c1c;
+  @apply text-woodsmoke-50 bg-woodsmoke-950;
+}
+
+.btn--light {
+  --btn-highlight-color: #fff;
+  @apply bg-woodsmoke-50 text-woodsmoke-950;
+}
+
+.btn--fluid {
+    @apply w-full;
+}

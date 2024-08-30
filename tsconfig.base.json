@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@tnf-workspace/react-components": ["react-components/src/index.ts"],
+      "@tnf-workspace/ts-lib": ["ts-lib/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

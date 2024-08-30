@@ -1,0 +1,10 @@
+.services-summary {
+
+  &__content {
+    @apply flex *:flex-1 flex-col lg:flex-row gap-10 py-25;
+  }
+}
+
+.bubble-item {
+  @apply opacity-0;
+}

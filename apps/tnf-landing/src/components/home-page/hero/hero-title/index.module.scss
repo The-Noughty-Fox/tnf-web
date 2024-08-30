@@ -1,0 +1,11 @@
+.title {
+  @apply opacity-0 leading-1 text-[75px] text-accent-big uppercase;
+
+  @media (min-width: 440px) {
+    @apply text-[90px];
+  }
+
+  &__item {
+    @apply opacity-0 inline-block;
+  }
+}

@@ -1,0 +1,11 @@
+.services-hero {
+  @apply relative aspect-video flex flex-col items-center md:max-h-[734px] w-full pt-30 pb-6 md:pt-15 md:pb-15;
+
+  &__controls {
+    @apply md:absolute w-full md:bottom-20;
+  }
+}
+
+.hero-item {
+  @apply opacity-0;
+}

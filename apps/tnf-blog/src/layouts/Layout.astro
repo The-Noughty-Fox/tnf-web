@@ -1,0 +1,66 @@
+---
+import { screens } from '@tnf-workspace/ts-lib';
+import { Bootstrap } from '../components/bootstrap'
+import { containerPx, containerPxLg, containerPxMd } from '../../../../ts-lib/src';
+import { Header, Footer } from '@tnf-workspace/react-components'
+import { pageRoutes } from '../../../tnf-landing/src/lib/pageRoutes';
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+
+	<body>
+       <Bootstrap client:load />
+       <Header client:load links={[
+         {name: 'Services', href: '/blog'},
+         {name: 'Portfolio', href: '#'},
+         {name: 'Contact us', href: '#'},
+         {name: 'Blog', href: '#'}
+       ]} />
+      <main>
+        <slot />
+      </main>
+
+       <Footer client:load links={[
+         { href: '#', name: 'Services' },
+         { href: '/', name: 'Blog' },
+         { href: '#', name: 'Portfolio' },
+         { href: '#', name: 'Contact us' },
+         { href: '#', name: 'Q & A' },
+         { href: '#', name: 'Privacy & Terms' },
+       ]} />
+	</body>
+</html>
+
+
+<style is:global lang="scss" define:vars={{
+  'screen-sm': `${screens.sm}px`,
+  'screen-md': `${screens.md}px`,
+  'screen-lg': `${screens.lg}px`,
+  'screen-xl': `${screens.xl}px`,
+  'container-px': `${containerPx}px`,
+  'container-px-md': `${containerPxMd}px`,
+  'container-px-lg': `${containerPxLg}px`,
+}}>
+:root {
+    --full-width: calc(100vw - var(--scrollbar-width, 0px));
+}
+
+body {
+  @apply m-0 text-woodsmoke-50 bg-woodsmoke-950;
+}
+</style>
+

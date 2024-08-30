@@ -1,0 +1,20 @@
+.dynamic-grid {
+  &__grid {
+    @apply w-[150%] grid justify-items-center gap-4 lg:gap-8;
+
+    transform: rotate(6deg) translateY(50px);
+    z-index: -1;
+
+    @media (min-width: 834px) {
+      transform: rotate(5deg) translateY(80px);
+    }
+
+    @media (min-width: 1200px) {
+      transform: rotate(5deg) translateY(150px);
+    }
+  }
+
+  &___grid-item {
+    @apply h-2 w-2 lg:w-4 lg:h-4 rounded-full bg-orange-800 scale-[10%] will-change-transform;
+  }
+}

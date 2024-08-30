@@ -1,0 +1,63 @@
+.link {
+  @apply inline-block;
+
+  &-runner {
+    transition: .3s transform ease-in-out;
+    transform: scaleX(0);
+    height: 2px;
+    transform-origin: left;
+    @apply absolute bottom-0 left-0 right-0 w-full bg-primary;
+  }
+
+  &:hover &-runner {
+    transform: scaleX(1);
+  }
+}
+
+.nav {
+  @apply ml-auto fixed inset-0 lg:relative -z-10 lg:z-0 flex flex-col lg:flex-row pointer-events-none lg:pointer-events-auto;
+}
+.nav-certain {
+  @apply lg:hidden absolute inset-0 bg-black -z-10;
+}
+
+.ul {
+  @apply px-15 lg:px-0 mt-[150px] ml-auto lg:mt-0 flex flex-col lg:items-center lg:flex-row gap-10;
+}
+
+.li {
+  @apply text-h1 overflow-hidden flex items-center;
+
+  & a {
+    @apply inline-block relative;
+  }
+
+  & .runner {
+    transition: .3s transform ease-in-out;
+    transform: scaleX(0);
+    height: 2px;
+    transform-origin: left;
+    @apply absolute bottom-0 left-0 right-0 w-full bg-primary;
+  }
+
+  &:hover .runner {
+    transform: scaleX(1);
+  }
+}
+
+// animation defaults
+@media (max-width: 1200px) {
+  header {
+    .nav-certain {
+      opacity: 0;
+    }
+
+    .li a {
+      opacity: 0;
+    }
+
+    .controls {
+      opacity: 0;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@import "keyframes.scss";
+
+.glitch {
+  @apply inline-block relative;
+
+  & span:first-child {
+    @apply z-10;
+  }
+
+  & span:last-child {
+    @apply absolute -z-10 top-0 left-0;
+  }
+}

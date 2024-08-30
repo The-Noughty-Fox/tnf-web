@@ -1,0 +1,92 @@
+@import 'swiper/scss';
+@import 'swiper/scss/pagination';
+@import 'swiper/scss/free-mode';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .bleed {
+    margin: 0 calc(-50vw + 50% + var(--scrollbar-width, 0px) / 2 + env(safe-area-inset-left, 0) / 2 + env(safe-area-inset-right, 0) / 2);
+  }
+
+  .full-w {
+    width: var(--full-width);
+  }
+
+  .bleed-px {
+    padding: 0 var(--container-px);
+
+    @media (min-width: 834px) {
+      padding: 0 var(--container-px-md);
+    }
+
+    @media (min-width: 1200px) {
+      padding: 0 var(--container-px-lg);
+    }
+
+    @media (min-width: 1512px) {
+      padding: 0 calc((var(--full-width) - var(--screen-xl)) / 2 + var(--container-px-lg));
+    }
+  }
+
+  .absolute-inset {
+    @apply absolute inset-0;
+  }
+
+  .absolute-center {
+    @apply absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2;
+  }
+
+  .desktop {
+    @apply hidden md:block;
+  }
+
+  .mobile {
+    @apply block md:hidden;
+  }
+}
+
+body {
+  @apply m-0 text-woodsmoke-50 bg-woodsmoke-950;
+}
+
+:root {
+  --swiper-pagination-bullet-width: 16px;
+  --swiper-pagination-bullet-height: 16px;
+  --swiper-pagination-bullet-inactive-color: #5D5D5D;
+  --swiper-theme-color: #FF5C00;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+  transition: 0.5s transform, 0.75s left !important;
+}
+
+
+label {
+  @apply text-[20px] font-semibold text-woodsmoke-50 leading-1.15;
+}
+input:focus-visible, textarea:focus-visible {
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+
+input[type="text"], input[type="email"], textarea {
+  @apply rounded-2 focus-visible:outline-1 focus-visible:outline-primary focus-visible:shadow-none focus-visible:border-none  focus:ring-1 focus:ring-primary focus:shadow-none border-none hover:ring-1 hover:ring-orange-300 text-woodsmoke-950;
+}
+
+input[type="text"], input[type="email"] {
+  @apply py-4 pl-4 pr-[72px] leading-1.5;
+
+  @at-root {
+    label + input[type="text"], label + input[type="email"], textarea {
+      @apply mt-3;
+    }
+  }
+}
+
+button {
+  color: inherit;
+}
+

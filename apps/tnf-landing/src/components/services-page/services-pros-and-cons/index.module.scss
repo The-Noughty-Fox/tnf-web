@@ -1,0 +1,77 @@
+.pros-and-cons {
+  @apply relative py-80p*200p flex flex-col items-center gap-30 justify-between md:flex-row *:flex-1 px-8;
+
+  &:before {
+    @apply absolute h-0.5 md:h-3/4 w-full md:w-0.5 bg-primary md:-translate-x-1/2 md:-translate-y-1/2 -rotate-6 md:rotate-6;
+    top: 50%;
+    content: '';
+
+    @media (min-width: 834px) {
+        top: calc(50% + 100px);
+        left: calc(50% - 20px);
+    }
+  }
+
+  &__pro {
+    @apply relative;
+  }
+
+  &__pro &__list-item:before {
+    content: '+';
+    @apply absolute top-3 text-primary text-[32px];
+    right: calc(100% + 8px);
+    line-height: 0;
+  }
+
+  &__con &__list-item:before {
+    content: '-';
+    @apply absolute top-3 text-primary text-[32px];
+    right: calc(100% + 8px);
+    line-height: 0;
+  }
+
+  &__list {
+    @apply mt-10 text-body;
+
+    &-item {
+      @apply relative;
+
+      & + & {
+        @apply mt-4;
+      }
+    }
+  }
+
+  &__title {
+    @apply relative text-h1 uppercase max-w-3/4 min-h-[140px] m-auto flex items-center justify-center text-center;
+
+    &-how {
+      @apply absolute -rotate-12 -left-1/4;
+      bottom: calc(100% + 80px);
+
+      &-arrow {
+        @apply relative will-change-transform;
+
+        &.large {
+          @apply hidden md:block -left-10;
+        }
+
+        &.small {
+          @apply md:hidden left-25 top-25;
+        }
+      }
+
+      &-text {
+        @apply text-18*30 text-primary whitespace-nowrap normal-case will-change-transform;
+      }
+    }
+  }
+}
+
+.bubble-left {
+  @apply opacity-0;
+}
+
+.bubble-right {
+  @apply opacity-0;
+}

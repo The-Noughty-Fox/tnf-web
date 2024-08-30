@@ -1,0 +1,19 @@
+{
+  "name": "ts-lib",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "ts-lib/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/ts-lib",
+        "main": "ts-lib/src/index.ts",
+        "tsConfig": "ts-lib/tsconfig.lib.json",
+        "assets": ["ts-lib/*.md"]
+      }
+    }
+  }
+}
