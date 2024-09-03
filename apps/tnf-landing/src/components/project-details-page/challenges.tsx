@@ -28,10 +28,14 @@ export const Challenges = ({
         </div>
         {challengesAndSolutions.map(({ challenge, solution }, index) => (
           <div key={index} className="contents">
-            <div className="text-body leading-1.25 counter-item">
-              {challenge}
-            </div>
-            <div className="text-body leading-1.25">{solution}</div>
+            <p
+              className="text-body leading-1.25 counter-item"
+              dangerouslySetInnerHTML={{ __html: challenge }}
+            />
+            <div
+              className="text-body leading-1.25"
+              dangerouslySetInnerHTML={{ __html: solution }}
+            />
           </div>
         ))}
       </div>
@@ -40,9 +44,11 @@ export const Challenges = ({
           <div className="text-h2 text-primary uppercase">Challenges</div>
           <div className="counter mt-6 flex flex-col gap-11 max-w-[80%]">
             {challengesAndSolutions.map(({ challenge }, index) => (
-              <div key={index} className="text-body leading-1.5 counter-item">
-                {challenge}
-              </div>
+              <p
+                key={index}
+                className="text-body leading-1.5 counter-item"
+                dangerouslySetInnerHTML={{ __html: challenge }}
+              />
             ))}
           </div>
         </div>
@@ -50,9 +56,11 @@ export const Challenges = ({
           <div className="text-h2 text-primary uppercase">Solutions</div>
           <div className="counter mt-6 flex flex-col gap-11 max-w-[80%]">
             {challengesAndSolutions.map(({ solution }, index) => (
-              <div key={index} className="text-body leading-1.5 counter-item">
-                {solution}
-              </div>
+              <div
+                key={index}
+                className="text-body leading-1.5 counter-item"
+                dangerouslySetInnerHTML={{ __html: solution }}
+              />
             ))}
           </div>
         </div>

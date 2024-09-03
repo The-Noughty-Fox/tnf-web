@@ -16,11 +16,21 @@
     }
   }
 
+  & svg {
+    transition: color .5s cubic-bezier(.4,0,0,1);
+  }
+
   @media (pointer: fine) {
     &:hover &__ripple span {
       border-radius:0;
       transform: translateY(0);
       transition-duration: .5s,.9s
+    }
+
+    @at-root {
+      #{$this}:hover svg {
+        color: var(--btn-highlight-color);
+      }
     }
 
     &:hover {

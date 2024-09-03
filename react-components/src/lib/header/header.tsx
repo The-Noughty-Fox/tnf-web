@@ -130,6 +130,24 @@ export const Header = ({
     };
   }, []);
 
+  const toggleMenu = () => {
+    setIsMenuOpened((isMenuOpened) => {
+      if (isMenuOpened) {
+        // means menu is closing
+        appearTlRef.current?.timeScale(2.5, true);
+        appearTlRef.current?.reverse();
+        document.body.style.paddingRight = '0px';
+      } else {
+        // means menu is opening
+        appearTlRef.current?.timeScale(1, true);
+        appearTlRef.current?.play();
+        document.body.style.paddingRight = 'var(--scrollbar-width)';
+      }
+      onMenuToggle?.(!isMenuOpened);
+      return !isMenuOpened;
+    });
+  };
+
   return (
     <header className="w-full relative z-30">
       <Container>
@@ -139,21 +157,7 @@ export const Header = ({
           <Burger
             isActive={isMenuOpened}
             onClick={() => {
-              setIsMenuOpened((isMenuOpened) => {
-                if (isMenuOpened) {
-                  // means menu is closing
-                  appearTlRef.current?.timeScale(2.5, true);
-                  appearTlRef.current?.reverse();
-                  document.body.style.paddingRight = '0px';
-                } else {
-                  // means menu is opening
-                  appearTlRef.current?.timeScale(1, true);
-                  appearTlRef.current?.play();
-                  document.body.style.paddingRight = 'var(--scrollbar-width)';
-                }
-                onMenuToggle?.(!isMenuOpened);
-                return !isMenuOpened;
-              });
+              toggleMenu();
             }}
             className="ml-auto text-primary lg:hidden"
           />
@@ -174,6 +178,11 @@ export const Header = ({
                   name={name}
                   Link={Link}
                   activeLink={activeLink}
+                  onClick={() => {
+                    if (isMenuOpened) {
+                      toggleMenu();
+                    }
+                  }}
                 />
               ))}
               <li>

@@ -1,5 +1,4 @@
 import { Hero } from '../components/home-page/hero';
-import '../lib/gsap/effects';
 import { OurServices } from '../components/home-page/our-services';
 import { PingUs } from '../components/ping-us';
 import { OurApproach } from '../components/our-approach';
@@ -7,6 +6,8 @@ import { clampValue } from '@tnf-workspace/ts-lib';
 import { Testimonials } from '../components/testimonials';
 import { CoreTeam } from '../components/core-team';
 import { Contacts } from '../components/contacts';
+import { testimonials } from '../lib/data/testimonials';
+import { ArrowUpRightSvg } from '@tnf-workspace/react-components';
 
 export default function Index() {
   return (
@@ -26,38 +27,7 @@ export default function Index() {
           marginTop: clampValue({ minSize: 80, maxSize: 400 }),
         }}
       >
-        <Testimonials
-          testimonials={[
-            {
-              text: `Very communicative and pleasant to work with, highly motivated and eager to provide the best possible solution. They respond quickly, have great skills, and vast relevant knowledge. They provided excellent plans and timelines for a complex project.`,
-              name: 'Oren Cohen',
-              role: 'VP of R&D',
-              company: 'ResonAI',
-              thumbnail: '',
-            },
-            {
-              text: `Very communicative and pleasant to work with, highly motivated and eager to provide the best possible solution. They respond quickly, have great skills, and vast relevant knowledge. They provided excellent plans and timelines for a complex project.`,
-              name: 'Oren Cohen',
-              role: 'VP of R&D',
-              company: 'ResonAI',
-              thumbnail: '',
-            },
-            {
-              text: `Very communicative and pleasant to work with, highly motivated and eager to provide the best possible solution. They respond quickly, have great skills, and vast relevant knowledge. They provided excellent plans and timelines for a complex project.`,
-              name: 'Oren Cohen',
-              role: 'VP of R&D',
-              company: 'ResonAI',
-              thumbnail: '',
-            },
-            {
-              text: `Very communicative and pleasant to work with, highly motivated and eager to provide the best possible solution. They respond quickly, have great skills, and vast relevant knowledge. They provided excellent plans and timelines for a complex project.`,
-              name: 'Oren Cohen',
-              role: 'VP of R&D',
-              company: 'ResonAI',
-              thumbnail: '',
-            },
-          ]}
-        />
+        <Testimonials testimonials={testimonials} />
       </section>
       <section
         style={{
@@ -71,7 +41,7 @@ export default function Index() {
           marginTop: clampValue({ minSize: 80, maxSize: 400 }),
         }}
       >
-        <Contacts />
+        <Contacts controlText="Send message" Icon={<ArrowUpRightSvg />} />
       </section>
     </div>
   );

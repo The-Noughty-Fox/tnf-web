@@ -26,6 +26,11 @@ const items = [
     role: 'CTO & CO-Founder',
   },
   {
+    img: TeamMember7,
+    name: 'Serghei Tibulschi',
+    role: 'Full Stack Engineer',
+  },
+  {
     img: TeamMember3,
     name: 'Leonid Simonenco',
     role: 'Android Lead',
@@ -44,11 +49,6 @@ const items = [
     img: TeamMember6,
     name: 'Bogdan Knurenko',
     role: 'Android Engineer',
-  },
-  {
-    img: TeamMember7,
-    name: 'Serghei Tibulschi',
-    role: 'Full Stack Engineer',
   },
 ];
 
@@ -95,7 +95,7 @@ export const CoreTeam = () => {
                 <div className="text-h5 uppercase mt-3 md:mt-6 text-primary">
                   {name}
                 </div>
-                <div className="text-callout mt-2">{role}</div>
+                <div className="text-callout mt-2 uppercase">{role}</div>
               </div>
             </div>
           ))}

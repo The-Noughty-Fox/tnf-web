@@ -1,0 +1,57 @@
+---
+interface Props {
+    cover: string;
+    title: string;
+    subTitle: string;
+    pubDate: string;
+    author: {
+        name: string;
+        avatar: string;
+        role: string;
+    };
+    minutesRead: number;
+}
+
+import Layout from "../Layout.astro";
+import BlogPostHeader from "./BlogPostHeader.astro";
+import MorePostsByAuthor from "../../components/MorePostsByAuthor.astro";
+import { getCollection } from 'astro:content';
+import Delimeter from "../../components/Delimeter.astro";
+import { Container } from '@tnf-workspace/react-components'
+
+const {title, subTitle, pubDate, author, cover, minutesRead} = Astro.props;
+const pageTitle = `Blog ${title} | TNF Blog`
+const posts = await getCollection('blog');
+const authorPosts = posts.filter(post => post.data.author.name === author.name);
+---
+
+<Layout pageTitle={pageTitle}>
+    <div class="max-w-[870px] px-6 box-content m-auto mb-80p*200p">
+        <article>
+            <div class="mt-12">
+                <BlogPostHeader
+                    title={title}
+                    subTitle={subTitle}
+                    author={author}
+                    pubDate={pubDate}
+                    minutesRead={minutesRead}
+                />
+            </div>
+
+            <div class="post mt-[94px]">
+                <slot/>
+            </div>
+        </article>
+
+        <Delimeter />
+
+        <MorePostsByAuthor posts={authorPosts.map((p) => ({
+          slug: p.slug,
+          cover: p.data.cover,
+          title: p.data.title,
+          subTitle: p.data.subTitle,
+          pubDate: p.data.pubDate,
+          author: p.data.author
+        }))}  />
+    </div>
+</Layout>

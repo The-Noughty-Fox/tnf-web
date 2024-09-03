@@ -11,6 +11,8 @@ import NodeJs from '../../assets/technologies/nodeJs.png';
 import React from '../../assets/technologies/react.png';
 import Typescript from '../../assets/technologies/typescript.png';
 import NestJs from '../../assets/technologies/nestJs.png';
+import H3 from '../../assets/technologies/h3.webp';
+import Mapbox from '../../assets/technologies/mapbox.png';
 
 export const technologies = {
   swift: {
@@ -64,5 +66,13 @@ export const technologies = {
   nestJs: {
     title: 'NestJS',
     src: NestJs,
+  },
+  h3: {
+    title: 'H3',
+    src: H3,
+  },
+  mapbox: {
+    title: 'Mapbox',
+    src: Mapbox,
   },
 } as const;

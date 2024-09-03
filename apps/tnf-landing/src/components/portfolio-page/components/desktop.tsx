@@ -4,6 +4,8 @@ import NextImage, { StaticImageData } from 'next/image';
 import { ArrowUpRightSvg } from '@tnf-workspace/react-components';
 import { Domain } from './domain';
 import { ReactNode } from 'react';
+import { text } from '@tnf-workspace/ts-lib';
+import NextLink from 'next/link';
 
 type DesktopProps = {
   TitleLogo: ReactNode;
@@ -34,6 +36,7 @@ type DesktopProps = {
       twOpacity: string;
     };
   };
+  link: string;
 };
 
 export const Desktop = ({
@@ -44,6 +47,7 @@ export const Desktop = ({
   TitleLogo,
   description,
   background,
+  link,
 }: DesktopProps) => {
   const descriptionClasses = clsx(
     twTheme?.twTextColor || 'text-current-color',
@@ -82,17 +86,10 @@ export const Desktop = ({
             <div className="flex flex-col items-start my-auto">
               <div className="mt-auto">{TitleLogo}</div>
               <div className={descriptionClasses}>{description}</div>
-              {cta?.link && (
-                <a
-                  className={ctaClasses}
-                  href={cta.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span>{cta.text}</span>
-                  <ArrowUpRightSvg width={20} height={20} />
-                </a>
-              )}
+              <NextLink className={ctaClasses} href={link}>
+                <span>{text.view_case_study}</span>
+                <ArrowUpRightSvg width={20} height={20} />
+              </NextLink>
             </div>
           </div>
         </div>

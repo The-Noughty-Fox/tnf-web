@@ -17,6 +17,7 @@ type ListItemProps = {
   Link?: ReactElement;
   className?: string;
   activeLink?: string;
+  onClick?: () => void;
 };
 
 export const ListItem = ({
@@ -25,6 +26,7 @@ export const ListItem = ({
   Link,
   className,
   activeLink,
+  onClick,
 }: ListItemProps) => {
   const ref = useRef<HTMLDivElement | null>(null);
   const enterTimeout = useRef<NodeJS.Timeout | null>(null);
@@ -66,7 +68,7 @@ export const ListItem = ({
   };
 
   return (
-    <li className={styles.li}>
+    <li className={styles.li} onClick={onClick}>
       {cloneElement(
         Link || <a></a>,
         {

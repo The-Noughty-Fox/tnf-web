@@ -3,9 +3,9 @@ export const pageRoutes = {
   services: '/services',
   contactUs: '/contact-us',
   portfolio: '/portfolio',
-  projectDetails: (projectName: any) => `/portfolio/${projectName}`,
+  projectDetails: (projectName: string) => `/portfolio/${projectName}`,
   prices: '/prices',
   qAndA: '/q-and-a',
-  blog: '/blog',
+  blog: process.env.NEXT_PUBLIC_BLOG_PAGE || '',
   privacyTerms: '/privacy-terms',
 };

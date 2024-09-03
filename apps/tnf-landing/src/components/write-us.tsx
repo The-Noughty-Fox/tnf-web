@@ -1,11 +1,16 @@
 'use client';
 import clsx from 'clsx';
 import { gsap } from 'gsap';
-import { FormEvent, useEffect, useRef } from 'react';
+import { FormEvent, ReactElement, useEffect, useRef } from 'react';
 import { text } from '../lib/text';
 import { Button } from '@tnf-workspace/react-components';
 
-export const WriteUs = () => {
+type WriteUsProps = {
+  controlText?: string;
+  Icon?: ReactElement;
+};
+
+export const WriteUs = ({ Icon, controlText = 'Write us' }: WriteUsProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerCn = clsx('max-w-[612px] w-full');
   const formTitleCn = clsx(
@@ -61,7 +66,7 @@ export const WriteUs = () => {
           />
         </div>
         <div className="form-control flex justify-center mt-10">
-          <Button text="Write us" size="small" />
+          <Button text={controlText} size="small" Icon={Icon} />
         </div>
       </form>
     </div>

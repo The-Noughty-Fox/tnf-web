@@ -7,11 +7,11 @@ export default function Index() {
   return (
     <div className="mb-80p*200p">
       <Container>
-        <div className="-mb-10 -mt-16">
+        <div className="md:-mb-10 md:-mt-16">
           <CalendlyWidget />
         </div>
         <Quote />
-        <div className="mt-[90px] flex justify-center">
+        <div className="mt-[160px] flex justify-center">
           <WriteUs />
         </div>
       </Container>

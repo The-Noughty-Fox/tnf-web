@@ -55,6 +55,7 @@ export const Banner = ({ project }: BannerProps) => {
         title={projectData.title}
         description={projectData.description}
         img={projectData.img.mobile}
+        link={projectData.link}
       />
     </div>
   );

@@ -38,7 +38,6 @@ export type ProjectCardProps = {
 };
 
 export const ProjectCard = ({
-  cta,
   domains,
   title,
   description,
@@ -49,17 +48,22 @@ export const ProjectCard = ({
   background,
 }: ProjectCardProps) => {
   return (
-    <NextLink href={link}>
+    <>
       <Desktop
         TitleLogo={TitleLogo}
         description={description}
         domains={domains}
         img={img}
-        cta={cta}
         twTheme={twTheme}
         background={background}
+        link={link}
       />
-      <Mobile title={title} description={description} img={img.mobile} />
-    </NextLink>
+      <Mobile
+        title={title}
+        description={description}
+        img={img.mobile}
+        link={link}
+      />
+    </>
   );
 };

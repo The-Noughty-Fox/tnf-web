@@ -1,0 +1,28 @@
+---
+import FormattedDate from './FormattedDate.astro';
+import { type CollectionEntry } from 'astro:content';
+import { Slider } from './slider'
+
+interface Props {
+  posts: {
+    slug: string;
+    cover: string;
+    title: string;
+    subTitle: string;
+    pubDate: string;
+    author: {
+      name: string;
+      avatar: string;
+    };
+  }[]
+}
+
+ const { posts } = Astro.props;
+---
+
+<div>
+  <div class="bleed bleed-px">
+    <h6 class="text-h4 mb-12">More of this author</h6>
+  </div>
+  <Slider posts={posts} client:load className="bleed bleed-px" />
+</div>

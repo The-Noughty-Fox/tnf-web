@@ -14,7 +14,7 @@ export const AppHeader = () => {
         { name: 'Services', href: pageRoutes.services },
         { name: 'Portfolio', href: pageRoutes.portfolio },
         { name: 'Contact us', href: pageRoutes.contactUs },
-        { name: 'Blog', href: '#' },
+        { name: 'Blog', href: process.env.NEXT_PUBLIC_BLOG_PAGE || '' },
       ]}
       onMenuToggle={(isOpened: boolean) => {
         if (isOpened) {

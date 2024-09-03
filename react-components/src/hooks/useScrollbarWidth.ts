@@ -27,9 +27,6 @@ export const useScrollbarWidth = () => {
           '--scrollbar-width',
           `${outerRef.current?.offsetWidth - innerRef.current?.offsetWidth}px`
         );
-        console.log(
-          outerRef.current?.offsetWidth - innerRef.current?.offsetWidth
-        );
       }
     };
 

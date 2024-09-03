@@ -8,6 +8,7 @@ import { Testimonials } from '../../components/testimonials';
 import { ServicesMobileDevelopment } from '../../components/services-page/services-mobile-development';
 import { ServicesStats } from '../../components/services-page/services-stats';
 import { ServicesProsAndCons } from '../../components/services-page/services-pros-and-cons';
+import { testimonials } from '../../lib/data/testimonials';
 
 export default function Index() {
   return (
@@ -41,38 +42,7 @@ export default function Index() {
         </Container>
       </div>
       <div className="mt-80p*200p">
-        <Testimonials
-          testimonials={[
-            {
-              text: `Very communicative and pleasant to work with, highly motivated and eager to provide the best possible solution. They respond quickly, have great skills, and vast relevant knowledge. They provided excellent plans and timelines for a complex project.`,
-              name: 'Oren Cohen',
-              role: 'VP of R&D',
-              company: 'ResonAI',
-              thumbnail: '',
-            },
-            {
-              text: `Very communicative and pleasant to work with, highly motivated and eager to provide the best possible solution. They respond quickly, have great skills, and vast relevant knowledge. They provided excellent plans and timelines for a complex project.`,
-              name: 'Oren Cohen',
-              role: 'VP of R&D',
-              company: 'ResonAI',
-              thumbnail: '',
-            },
-            {
-              text: `Very communicative and pleasant to work with, highly motivated and eager to provide the best possible solution. They respond quickly, have great skills, and vast relevant knowledge. They provided excellent plans and timelines for a complex project.`,
-              name: 'Oren Cohen',
-              role: 'VP of R&D',
-              company: 'ResonAI',
-              thumbnail: '',
-            },
-            {
-              text: `Very communicative and pleasant to work with, highly motivated and eager to provide the best possible solution. They respond quickly, have great skills, and vast relevant knowledge. They provided excellent plans and timelines for a complex project.`,
-              name: 'Oren Cohen',
-              role: 'VP of R&D',
-              company: 'ResonAI',
-              thumbnail: '',
-            },
-          ]}
-        />
+        <Testimonials testimonials={testimonials} />
       </div>
       <div className="mt-80p*200p">
         <ServicesMobileDevelopment />

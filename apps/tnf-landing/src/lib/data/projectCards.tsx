@@ -1,8 +1,8 @@
 import EnclavesImg_main from '../../assets/portfolio/enclaves/enclaves_main.webp';
 import EnclavesImg_mobile from '../../assets/portfolio/enclaves/enclaves_mobile.jpg';
-import WildlyImgBg from '../../assets/portfolio/wildly/portfolio_wildly_bg.webp';
-import WildlyImg_main from '../../assets/portfolio/wildly/wildly_main.webp';
-import WildlyImg_mobile from '../../assets/portfolio/wildly/wildly_mobile.jpg';
+import WildyImgBg from '../../assets/portfolio/wildy/portfolio_wildy_bg.webp';
+import WildyImg_main from '../../assets/portfolio/wildy/wildy_main.webp';
+import WildyImg_mobile from '../../assets/portfolio/wildy/wildy_mobile.jpg';
 import VeraImg_main from '../../assets/portfolio/vera/vera_main.webp';
 import VeraImg_mobile from '../../assets/portfolio/vera/vera_mobile.jpg';
 import PoolexImg_main from '../../assets/portfolio/poolex/poolex_main.webp';
@@ -17,7 +17,7 @@ import EnclavesImg_title from '../../assets/clients/enclaves.png';
 import PvolveImg_title from '../../assets/clients/pvolve.png';
 import PoolexImg_title from '../../assets/clients/poolex.png';
 import VeraImg from '../../assets/clients/vera.png';
-import WildlyImg from '../../assets/clients/wildy.png';
+import WildyImg from '../../assets/clients/wildy.png';
 import { ProjectCardType } from '../types/projects';
 import { clampValue } from '@tnf-workspace/ts-lib';
 import { pageRoutes } from '../pageRoutes';
@@ -65,22 +65,22 @@ export const projectCards: ProjectCardType[] = [
     platform: ['ios', 'android'],
   },
   {
-    key: 'wildly',
+    key: 'wildy',
     img: {
       desktop: {
-        img: WildlyImg_main,
+        img: WildyImg_main,
         twWidth: clampValue({ minSize: 150, maxSize: 425 }),
       },
-      mobile: WildlyImg_mobile,
+      mobile: WildyImg_mobile,
     },
     background: {
-      img: WildlyImgBg,
+      img: WildyImgBg,
       tint: {
         twOpacity: 'opacity-50',
         twColor: 'bg-violet',
       },
     },
-    link: pageRoutes.projectDetails('wildly'),
+    link: pageRoutes.projectDetails('wildy'),
     TitleLogo: (
       <NextImage
         style={{
@@ -89,11 +89,11 @@ export const projectCards: ProjectCardType[] = [
             maxSize: 166,
           }),
         }}
-        src={WildlyImg}
-        alt="Wildly project logo"
+        src={WildyImg}
+        alt="Wildy project logo"
       />
     ),
-    title: 'Wildly',
+    title: 'Wildy',
     description:
       'Transform Intention into Action: Simplify Your Start, Track Your Journey, Visualize Your Progress',
     domains: ['Fitness'],

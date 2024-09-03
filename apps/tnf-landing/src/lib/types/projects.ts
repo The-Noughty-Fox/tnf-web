@@ -4,7 +4,7 @@ import { StaticImageData } from 'next/image';
 
 export const projects = [
   'enclaves',
-  'wildly',
+  'wildy',
   'vera',
   'poolex',
   'pvolve',

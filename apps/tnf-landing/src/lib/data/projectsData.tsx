@@ -8,15 +8,15 @@ import EnclavesSlide5 from '../../assets/portfolio/enclaves/slides/slide_5.webp'
 import EnclavesSlide6 from '../../assets/portfolio/enclaves/slides/slide_6.webp';
 import EnclavesImg_challenges from '../../assets/portfolio/enclaves/challenges_img.webp';
 
-import WildlyImg_main from '../../assets/portfolio/wildly/wildly_main.png';
-import WildlyImg_mobile from '../../assets/portfolio/wildly/wildly_mobile.png';
-import WildlySlide1 from '../../assets/portfolio/wildly/slides/slide_1.png';
-import WildlySlide2 from '../../assets/portfolio/wildly/slides/slide_2.png';
-import WildlySlide3 from '../../assets/portfolio/wildly/slides/slide_3.png';
-import WildlySlide4 from '../../assets/portfolio/wildly/slides/slide_4.png';
-import WildlySlide5 from '../../assets/portfolio/wildly/slides/slide_5.png';
-import WildlySlide6 from '../../assets/portfolio/wildly/slides/slide_6.png';
-import WildlyChallengesImg from '../../assets/portfolio/wildly/challenges_img.png';
+import WildyImg_main from '../../assets/portfolio/wildy/wildy_main.png';
+import WildyImg_mobile from '../../assets/portfolio/wildy/wildy_mobile.png';
+import WildySlide1 from '../../assets/portfolio/wildy/slides/slide_1.png';
+import WildySlide2 from '../../assets/portfolio/wildy/slides/slide_2.png';
+import WildySlide3 from '../../assets/portfolio/wildy/slides/slide_3.png';
+import WildySlide4 from '../../assets/portfolio/wildy/slides/slide_4.png';
+import WildySlide5 from '../../assets/portfolio/wildy/slides/slide_5.png';
+import WildySlide6 from '../../assets/portfolio/wildy/slides/slide_6.png';
+import WildyChallengesImg from '../../assets/portfolio/wildy/challenges_img.png';
 
 import PvolveImg_main from '../../assets/portfolio/pvolve/pvolve_main.png';
 import PvolveImg_mobile from '../../assets/portfolio/pvolve/pvolve_mobile.png';
@@ -51,7 +51,10 @@ import { ReactNode } from 'react';
 import { StaticImageData } from 'next/image';
 
 export type ProjectDataItemType = {
-  socials: { type: 'app store' | 'google play' | 'personal'; link: string }[];
+  socials: {
+    type: 'app store' | 'google play' | 'personal' | 'figma' | 'upwork';
+    link: string;
+  }[];
   title: string;
   description: string;
   img: {
@@ -94,8 +97,10 @@ type ProjectDataType = Record<ProjectType, ProjectDataItemType>;
 export const projectsData: ProjectDataType = {
   enclaves: {
     socials: [
-      { link: '', type: 'app store' },
+      { link: 'https://google.com', type: 'app store' },
       { link: '', type: 'google play' },
+      { link: '', type: 'figma' },
+      { link: '', type: 'upwork' },
     ],
     title: 'Enclaves',
     description: 'Walk, conquer, and compete with others',
@@ -119,11 +124,19 @@ export const projectsData: ProjectDataType = {
       src: EnclavesImg_challenges,
       width: 358,
     },
-    technologies: ['swift', 'swiftUi', 'uiKit', 'kotlin', 'jetpackCompose'],
+    technologies: [
+      'swift',
+      'swiftUi',
+      'uiKit',
+      'kotlin',
+      'jetpackCompose',
+      'mapbox',
+      'h3',
+    ],
     challengesAndSolutions: [
       {
         challenge:
-          'Challenge number 1 was very hard, at first we didn’t know how to do it.',
+          '<em>Challenge</em> number 1 was very hard, at first we didn’t know how to do it.',
         solution:
           'Solution number 1, since we are very professional guys we managed to find solution quickly.',
       },
@@ -142,11 +155,14 @@ export const projectsData: ProjectDataType = {
     ],
     projectInfo: {
       infoTitle: 'App that will boost your activity.',
-      infoDescription: `Enclaves is a personal project of mine that I wanted to get into the world. I envisioned the app back in 2020, and, after many iterations, team meetings, and beta tests, in 2023 I released it to the public. It revolves around walking and conquering territories in your city, competing with other people and discovering new places, and is one of a kind.`,
+      infoDescription: `Enclaves is a personal project of mine that<br> I wanted to get into the world. I envisioned the app back in 2020, and, after many iterations, team meetings, and beta tests, in 2023 I released it to the public. It revolves around walking and conquering territories in your city, competing with other people and discovering new places, and is one of a kind.`,
       infoItems: [
         { label: 'Industries', value: 'Fitness' },
         { label: 'Services', value: 'iOS, Android' },
-        { label: 'Team', value: '1 Android dev, 1 iOS devs, Backend dev' },
+        {
+          label: 'Team',
+          value: '1 Android dev,<br> 1 iOS devs,<br> Backend dev',
+        },
         { label: 'Country', value: 'USA' },
         { label: 'Year', value: '2021' },
         { label: 'Duration', value: '6 month' },
@@ -411,32 +427,32 @@ export const projectsData: ProjectDataType = {
       { label: 'AppStore Rating', value: '4.5' },
     ],
   },
-  wildly: {
+  wildy: {
     socials: [
       { link: '', type: 'app store' },
       { link: '', type: 'google play' },
     ],
-    title: 'Wildly',
+    title: 'Wildy',
     description:
       'Transform Intention into Action: Simplify Your Start, Track Your Journey, Visualize Your Progress',
     img: {
-      x1: WildlyImg_main,
-      mobile: WildlyImg_mobile,
+      x1: WildyImg_main,
+      mobile: WildyImg_mobile,
     },
     technologies: ['swift', 'swiftUi', 'uiKit', 'kotlin', 'jetpackCompose'],
     slides: {
       width: 300,
       items: [
-        WildlySlide1,
-        WildlySlide2,
-        WildlySlide3,
-        WildlySlide4,
-        WildlySlide5,
-        WildlySlide6,
+        WildySlide1,
+        WildySlide2,
+        WildySlide3,
+        WildySlide4,
+        WildySlide5,
+        WildySlide6,
       ],
     },
     challengesImg: {
-      src: WildlyChallengesImg,
+      src: WildyChallengesImg,
       width: 358,
     },
     challengesAndSolutions: [
@@ -500,8 +516,8 @@ export const projectsData: ProjectDataType = {
     title: 'TestApp',
     description: 'Effortless distribution Game-changing feedback',
     img: {
-      x1: WildlyImg_main,
-      mobile: WildlyImg_mobile,
+      x1: WildyImg_main,
+      mobile: WildyImg_mobile,
     },
     technologies: ['swift', 'swiftUi', 'uiKit', 'kotlin', 'jetpackCompose'],
     slides: {

@@ -23,9 +23,15 @@ type FooterProps = {
   linkToHome?: string;
   links: { href: string; name: string }[];
   Link?: ReactElement;
+  ContactUs?: ReactElement;
 };
 
-export const Footer = ({ links, Link, linkToHome = '/' }: FooterProps) => {
+export const Footer = ({
+  links,
+  Link,
+  ContactUs,
+  linkToHome = '/',
+}: FooterProps) => {
   return (
     <div className="py-8">
       <Container>
@@ -68,13 +74,13 @@ export const Footer = ({ links, Link, linkToHome = '/' }: FooterProps) => {
               Ready to start your next project or have questions? Reach out to
               us!
             </div>
-            <div className="mt-6 md:mt-16">
-              <Button text="Contact us" size="small" />
-            </div>
+            <div className="mt-6 md:mt-16">{ContactUs}</div>
           </div>
         </div>
-        <div className="mt-23 bleed">
-          <MarqueeLine />
+        <div className="mt-23">
+          <div className="bleed">
+            <MarqueeLine />
+          </div>
         </div>
         <div className="text-caption mt-3 md:mt-12">
           ©{new Date().getFullYear()} The Noughty Fox

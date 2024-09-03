@@ -1,6 +1,6 @@
 'use client';
 import { gsap } from 'gsap';
-import { useEffect, useRef } from 'react';
+import { ReactElement, useEffect, useRef } from 'react';
 import { Container } from '@tnf-workspace/react-components';
 import { Heading } from './heading';
 import { Blurry } from './blurry';
@@ -10,7 +10,12 @@ import EnvelopeSvg from '../assets/envelope.svg';
 import PhoneSvg from '../assets/phone.svg';
 import Image from 'next/image';
 
-export const Contacts = () => {
+type ContactsProps = {
+  controlText?: string;
+  Icon?: ReactElement;
+};
+
+export const Contacts = ({ Icon, controlText = 'Write us' }: ContactsProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -31,9 +36,9 @@ export const Contacts = () => {
         <Heading text={'Contacts'} />
         <div className="mt-15 flex gap-10 justify-between relative">
           <div className="flex-1 flex justify-center">
-            <WriteUs />
+            <WriteUs controlText={controlText} Icon={Icon} />
           </div>
-          <div ref={ref} className="relative hidden md:block pb-20">
+          <div ref={ref} className="relative hidden md:block pb-20 mt-15">
             <div className="contact-item">
               <div className="text-accent-small uppercase">find us here</div>
               <a
@@ -43,7 +48,7 @@ export const Contacts = () => {
                 Mateevichi str, 27, Chisinau, MD
               </a>
             </div>
-            <div className="contact-item mt-15">
+            <div className="contact-item mt-[112px]">
               <div className="text-accent-small uppercase">email us</div>
               <a
                 href="mailto:info@thenoughtyfox.com"
@@ -52,7 +57,7 @@ export const Contacts = () => {
                 info@thenoughtyfox.com
               </a>
             </div>
-            <div className="contact-item mt-15">
+            <div className="contact-item mt-[112px]">
               <div className="text-accent-small uppercase">call us</div>
               <a href="tel:+(373)69121314" className="text-h6 text-orange-400">
                 +(373) 69 12 13 14

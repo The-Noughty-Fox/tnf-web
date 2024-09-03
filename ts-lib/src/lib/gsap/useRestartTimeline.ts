@@ -1,4 +1,4 @@
-import gsap from 'gsap';
+'use client';
 import { useEffect } from 'react';
 
 export const useRestartTimeline = (tl: gsap.core.Timeline) => {

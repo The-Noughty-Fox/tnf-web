@@ -1,7 +1,7 @@
 'use client';
 import styles from './index.module.scss';
 import clsx from 'clsx';
-import { useRef } from 'react';
+import { ReactElement, useRef } from 'react';
 
 type ButtonProps = {
   text: string;
@@ -9,6 +9,7 @@ type ButtonProps = {
   size?: 'small' | 'large';
   variant?: 'primary' | 'dark' | 'light';
   fluid?: boolean;
+  Icon?: ReactElement;
 };
 
 export const Button = ({
@@ -17,6 +18,7 @@ export const Button = ({
   size = 'large',
   variant = 'primary',
   fluid,
+  Icon,
 }: ButtonProps) => {
   const btnClsx = clsx(styles.btn, {
     [styles['btn--small']]: size === 'small',
@@ -33,10 +35,11 @@ export const Button = ({
       <span className={styles['btn__ripple']}>
         <span></span>
       </span>
-      <div className="overflow-hidden">
+      <div className="overflow-hidden flex items-center gap-2">
         <div ref={ref} data-text={text} className={styles['btn__text']}>
           {text}
         </div>
+        {Icon && <div className="relative z-50">{Icon}</div>}
       </div>
     </button>
   );

@@ -1,20 +1,21 @@
 import './global.scss';
-import { AppProvider } from '@tnf-workspace/react-components';
+import { AppProvider, Button } from '@tnf-workspace/react-components';
 import Link from 'next/link';
 import {
   screens,
   containerPx,
   containerPxMd,
   containerPxLg,
+  text,
 } from '@tnf-workspace/ts-lib';
 import { Bootstrap } from '../components/bootstrap';
-import { CSSProperties } from 'react';
+import { CSSProperties, ReactNode } from 'react';
 import { pageRoutes } from '../lib/pageRoutes';
 import { Footer } from '@tnf-workspace/react-components';
 import { AppHeader } from '../components/app-header';
 import { Montserrat, Roboto } from 'next/font/google';
 import localFont from 'next/font/local';
-import { headers } from 'next/headers';
+import { ContactUsBtn } from '../components/contact-us-btn';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -64,11 +65,7 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
@@ -95,7 +92,11 @@ export default function RootLayout({
             <main className="flex-1 flex flex-col *:flex-1 relative ">
               {children}
             </main>
-            <Footer links={links} Link={<Link href="" />} />
+            <Footer
+              links={links}
+              Link={<Link href="" />}
+              ContactUs={<ContactUsBtn />}
+            />
           </AppProvider>
         </div>
       </body>

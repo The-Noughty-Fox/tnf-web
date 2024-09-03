@@ -3,7 +3,7 @@ import { text } from '../../lib/text';
 
 export const Quote = () => {
   return (
-    <div className="my-8 relative">
+    <div className="relative">
       <QuoteSvg className="md:absolute md:top-0 md:-left-2 md:-translate-x-full md:-translate-y-full" />
       <div className="text-body text-white mt-2 md:m-0 text-center">
         {text.contact_us_ceo_quote}

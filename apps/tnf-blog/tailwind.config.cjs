@@ -20,11 +20,24 @@ module.exports = {
       ...screensTheme,
       'max-md': { max: screensTheme.md },
     },
+    fontFamily: {
+      primary: ['var(--font-montserrat)'],
+      fivo: ['var(--font-fivo)'],
+    },
     spacing: {
       ...generateSpacing([
         { keyStep: 0.5, valueStep: 2, until: 20 },
         { keyStep: 1, valueStep: 4, until: 120 },
-      ])
+      ]),
+      '80p*200p': clampValue({ minSize: 80, maxSize: 200 }),
+    },
+    lineHeight: {
+      1: '1',
+      '1.15': '1.15',
+      '1.25': '1.25',
+      '1.5': '1.5',
+      '1.75': '1.75',
+      '2': '2',
     },
     borderRadius: () => ({
       ...generateSpacing([

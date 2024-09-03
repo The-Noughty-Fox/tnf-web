@@ -3,8 +3,8 @@ import { rem } from '../utils/rem';
 const screens = {
   sm: 390,
   md: 834,
-  lg: 1200,
-  xl: 1512,
+  lg: 1182,
+  xl: 1440,
 };
 
 const screenMin = screens.sm;

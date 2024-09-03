@@ -25,7 +25,7 @@
       padding: 0 var(--container-px-lg);
     }
 
-    @media (min-width: 1512px) {
+    @media (min-width: 1440px) {
       padding: 0 calc((var(--full-width) - var(--screen-xl)) / 2 + var(--container-px-lg));
     }
   }
@@ -45,6 +45,10 @@
   .mobile {
     @apply block md:hidden;
   }
+}
+
+html.lenis-stopped body {
+  overflow: hidden;
 }
 
 body {

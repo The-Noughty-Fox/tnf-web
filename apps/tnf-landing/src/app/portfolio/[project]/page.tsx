@@ -3,7 +3,9 @@ import { notFound } from 'next/navigation';
 import {
   AppleStoreSvg,
   Container,
+  FigmaSvg,
   PlayMarketStoreSvg,
+  UpworkSvg2,
 } from '@tnf-workspace/react-components';
 import { Banner } from '../../../components/project-details-page/banner';
 import { projects, ProjectType } from '../../../lib/types/projects';
@@ -29,7 +31,12 @@ export default function Index({ params }: { params: { project: string } }) {
     return data.socials.map((social) => {
       if (social.type === 'app store') {
         return (
-          <button key="app-store">
+          <button
+            key="app-store"
+            onClick={() => {
+              window.open(social.link, '_blank');
+            }}
+          >
             <AppleStoreSvg />
           </button>
         );
@@ -37,13 +44,59 @@ export default function Index({ params }: { params: { project: string } }) {
 
       if (social.type === 'google play') {
         return (
-          <button key="play market store">
+          <button
+            key="play market store"
+            onClick={() => {
+              window.open(social.link, '_blank');
+            }}
+          >
             <PlayMarketStoreSvg />
           </button>
         );
       }
 
-      return <button key="visit">Visit</button>;
+      if (social.type === 'figma') {
+        return (
+          <button
+            type="button"
+            className="flex items-center justify-center gap-2 w-[180px] h-[52px] text-h5 text-woodsmoke-950 bg-white rounded-2"
+            key="figma"
+            onClick={() => {
+              window.open(social.link, '_blank');
+            }}
+          >
+            <FigmaSvg width={40} height={40} />
+            <span>Figma</span>
+          </button>
+        );
+      }
+
+      if (social.type === 'upwork') {
+        return (
+          <button
+            type="button"
+            className="flex items-center justify-center gap-2 w-[180px] h-[52px] text-h5 text-woodsmoke-950 rounded-2 bg-white"
+            key="figma"
+            onClick={() => {
+              window.open(social.link, '_blank');
+            }}
+          >
+            <UpworkSvg2 width={32} height={32} />
+            <span>Upwork</span>
+          </button>
+        );
+      }
+
+      return (
+        <button
+          key="visit"
+          onClick={() => {
+            window.open(social.link, '_blank');
+          }}
+        >
+          Visit
+        </button>
+      );
     });
   };
 

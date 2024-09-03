@@ -1,0 +1,19 @@
+---
+import Container from '../../../layouts/Container.astro'
+interface Props {
+    caption: string;
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+    maxHeight?: number;
+}
+const { caption, src, alt, width, height, maxHeight } = Astro.props;
+---
+
+<figure class="bleed">
+    <Container>
+        <img style={`max-height: ${maxHeight ? `${maxHeight}px` : 'auto'};`} class="object-cover w-full h-auto" src={src} alt={alt} width={width} height={height} />
+        <figcaption class="font-bold">{caption}</figcaption>
+    </Container>
+</figure>

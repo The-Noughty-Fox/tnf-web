@@ -1,4 +1,4 @@
-import { colors } from '@tnf-workspace/ts-lib';
+import { colors } from '../../../ui-kit/colors';
 
 export const pathsValues = [
   {
