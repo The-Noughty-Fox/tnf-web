@@ -15,12 +15,12 @@ export const OurApproach = () => {
         <div className="relative fox-container">
           <div className="fox relative flex items-center justify-center">
             <FoxFilledSvg
-              className="h-auto text-orange-800"
+              className="h-auto text-primary"
               style={{
                 width: clampValue({ minSize: 193, maxSize: 355 }),
               }}
             />
-            <FoxOutlinedSvg className="absolute w-full h-full fox-outlined top-5 -left-3" />
+            <FoxOutlinedSvg className="absolute w-full h-full fox-outlined top-5 -left-2 text-orange-700" />
           </div>
           <div className="fox-heading absolute-center whitespace-nowrap">
             <Heading text={'Our Approach'} />

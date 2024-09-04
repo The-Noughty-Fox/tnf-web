@@ -1,3 +1,68 @@
 .bubble-item {
   @apply opacity-0;
 }
+
+.services-list {
+  @apply absolute inset-0;
+  counter-reset: services;
+}
+
+.services-list__item {
+  @apply font-normal leading-1.15 flex items-center gap-2;
+  font-size: 24px;
+  counter-increment: services;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(var(--coefficient));
+  transform-origin: center center;
+
+
+  &:nth-child(1) {
+    max-width: 12ch;
+    top: 65%;
+    left: 13%;
+    & span {
+      @apply -ml-2;
+    }
+  }
+
+  &:nth-child(2) {
+    max-width: 16ch;
+    top: 58%;
+    left: 40%;
+  }
+
+  &:nth-child(3) {
+    max-width: 14ch;
+    top: 31%;
+    left: 41%;
+  }
+
+  &:nth-child(4) {
+    max-width: 22ch;
+    top: 30%;
+    left: 64%;
+  }
+
+  &:nth-child(5) {
+    max-width: 15ch;
+    top: 8%;
+    left: 69%;
+  }
+
+  &:nth-child(6) {
+    width: 15ch;
+    top: 5%;
+    left: 88%;
+  }
+
+  & svg {
+    @apply absolute left-1/2 -translate-x-1/2 w-15 h-15;
+    top: calc(100% - 1rem);
+  }
+}
+
+.services-list__item::before {
+  font-size: 60px;
+  content: counter(services);
+  text-space: 0;
+}

@@ -39,29 +39,29 @@ export const HeroTitle = forwardRef((_, ref) => {
 
   return (
     <h1 className={styles.title}>
-      <div className="-mt-10">
+      <div className="md:-mt-10">
         <div className="md:inline-block overflow-hidden pt-10">
           <span
-            className={`${styles['title__item']} text--outlined--primary-1 md:text--outlined--primary-2 lg:text--outlined--primary-3 text-woodsmoke-950`}
+            className={`${styles['title__item']} text--outlined--primary-2 lg:text--outlined--primary-3 text-transparent hover:text--outlined--white-2 lg:hover:text--outlined--white-3`}
           >
             best
           </span>
         </div>{' '}
         <div className="md:inline-block overflow-hidden">
           <span className={styles['title__item']} data-text="native">
-            <span>mobile</span>
+            <span className="hover:text-primary">mobile</span>
           </span>
         </div>
       </div>
-      <div className="pt-10 -mt-10">
+      <div className="md:pt-10 md:-mt-18">
         <div className="md:inline-block overflow-hidden">
           <span
-            className={`${styles['title__item']} text--outlined--primary-1 md:text--outlined--primary-2 lg:text--outlined--primary-3 text-woodsmoke-950`}
+            className={`${styles['title__item']} text--outlined--primary-2 lg:text--outlined--primary-3 text-transparent hover:text--outlined--white-2 lg:hover:text--outlined--white-3`}
           >
             native
           </span>
         </div>{' '}
-        <div className="md:inline-block overflow-hidden">
+        <div className="md:inline-block overflow-hidden hover:text-primary">
           <span className={styles['title__item']}>team</span>
         </div>
       </div>

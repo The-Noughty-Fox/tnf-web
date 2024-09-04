@@ -1,0 +1,205 @@
+---
+cover: 'https://images.unsplash.com/photo-1719209618812-a11aea8d1a32?q=80&w=2908&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+title: 'Blog writing guide'
+subTitle: 'How to write a blog'
+pubDate: '2024-Sep-03'
+author: {
+name: 'Serghei Tibulschii',
+avatar: '/blog-placeholder-1.jpg',
+role: 'Fullstack engineer  @ TNF'
+}
+---
+import { List } from '../../components/ui/list.tsx'
+
+# Blog writing guide
+
+Markup language offers a simple way to format text. It is a lightweight and easy-to-use syntax for styling all forms of writing on the Web. You control the display of the document; formatting words as bold or italic, adding images, and creating lists are just a few of the things we can do with Markdown. Mostly, Markdown is just regular text with a few non-alphabetic characters thrown in, like # or *.
+
+In order to make a space between paragraphs, you need to add an empty line between them.
+
+# Headings
+
+To create a heading, add number signs (#) in front of a word or phrase. The number of number signs you use should correspond to the heading level. For example, to create a heading level three (h3), you'd use three number signs (e.g., ### My Header). You can add up to six number signs.
+```markdown
+1. # H1
+2. ## H2
+3. ### H3
+4. #### H4
+5. ##### H5
+6. ###### H6
+```
+
+# Paragraph
+
+A paragraph is simply one or more consecutive lines of text, separated by one or more blank lines. A line of text that contains only spaces, tabs, form feeds, and backslashes, followed by a line containing only spaces, tabs, form feeds, and backslashes, is a blank line.
+
+# Images
+
+For image we will use a special component called Figure.astro. Here is an example of how to use it:
+```markdown
+<Figure
+    alt='...'
+    src='...'
+    caption='...'
+    width='...'
+    height='...'
+    maxHeight='...' (Optional) Used in case you want to limit the height of the image
+/>
+```
+
+# Blockquotes
+
+#### Syntax
+
+The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a footer or cite element, and optionally with in-line changes such as annotations and abbreviations.
+```markdown
+> Tiam, ad mint andaepu dandae nostion secatur sequo quae.
+> **Note** that you can use _Markdown syntax_ within a blockquote.
+```
+
+#### Output
+
+> Tiam, ad mint andaepu dandae nostion secatur sequo quae.
+> **Note** that you can use _Markdown syntax_ within a blockquote.
+
+## Blockquote with attribution
+
+#### Syntax
+
+```markdown
+> Don't communicate by sharing memory, share memory by communicating.<br>
+> — <cite>Rob Pike[^1]</cite>
+```
+
+#### Output
+
+> Don't communicate by sharing memory, share memory by communicating.<br></br>
+> — <cite>Rob Pike[^1]</cite>
+
+
+[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
+
+# Code Blocks
+
+we can use 3 backticks ``` in new line and write snippet and close with 3 backticks on new line and to highlight language specific syntax, write one word of language name after first 3 backticks, for eg. html, javascript, css, markdown, typescript, txt, bash
+
+#### Syntax
+
+````markdown
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Example HTML5 Document</title>
+  </head>
+  <body>
+    <p>Test</p>
+  </body>
+</html>
+```
+````
+
+#### Output
+
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Example HTML5 Document</title>
+  </head>
+  <body>
+    <p>Test</p>
+  </body>
+</html>
+```
+
+# List Types
+
+#### Ordered List
+
+##### Syntax
+
+```markdown
+1. First item
+2. Second item
+3. Third item
+```
+
+##### Output
+
+1. First item
+2. Second item
+3. Third item
+
+##### Ordered List
+
+##### Syntax
+
+```markdown
+- List item
+- Another item
+- And another item
+```
+
+##### Output
+
+- List item
+- Another item
+- And another item
+
+##### Nested list
+
+#### Syntax
+
+```markdown
+- Fruit
+  - Apple
+  - Orange
+  - Banana
+- Dairy
+  - Milk
+  - Cheese
+```
+
+#### Output
+
+- Fruit
+  - Apple
+  - Orange
+  - Banana
+- Dairy
+  - Milk
+  - Cheese
+
+# Other Elements — abbr, sub, sup, kbd, mark
+
+### Syntax
+
+```markdown
+<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
+
+H<sub>2</sub>O
+
+X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
+
+Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
+
+Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+```
+
+### Output
+
+<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
+
+H<sub>2</sub>O
+
+X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
+
+Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
+
+Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+
+<List items={["Item1", "Item2"]} />
+

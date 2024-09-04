@@ -23,15 +23,15 @@ export const Hero = () => {
   }, []);
 
   return (
-    <div className="relative aspect-video flex flex-col items-center md:max-h-[734px] w-full py-15">
+    <div className="relative aspect-video flex flex-col items-center md:max-h-[734px] w-full pt-15 pb-[200px] mb-[250px] md:mb-0 md:pb-15">
       <Container>
         <div className="px-0 lg:px-12">
           <HeroTitle ref={titleTlRef} />
           <p
             ref={paragraphTlRef}
-            className="hidden opacity-0 md:flex mt-3 lg:mt-5 text-white items-center gap-4 text-18*30"
+            className="hidden opacity-0 md:flex text-white items-center gap-4 text-h5 max-w-3/4 md:max-w-[60%] font-normal"
           >
-            <StarSvg className="star hidden md:block" />
+            <StarSvg width={74} height={52} className="star hidden md:block" />
             {text.hero_p}
           </p>
         </div>

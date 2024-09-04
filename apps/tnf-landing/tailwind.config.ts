@@ -160,6 +160,18 @@ module.exports = {
           '-webkit-text-stroke-color': theme('colors.primary'),
           '-webkit-text-strokeWidth': '3px',
         },
+        '.text--outlined--white-1': {
+          '-webkit-text-stroke-color': theme('colors.white'),
+          '-webkit-text-stroke-width': '1px',
+        },
+        '.text--outlined--white-2': {
+          '-webkit-text-stroke-color': theme('colors.white'),
+          '-webkit-text-stroke-width': '2px',
+        },
+        '.text--outlined--white-3': {
+          '-webkit-text-stroke-color': theme('colors.white'),
+          '-webkit-text-stroke-width': '3px',
+        },
         '.form-group': {
           display: 'flex',
           flexDirection: 'column',

@@ -14,6 +14,8 @@ import {
 import { Button } from '@tnf-workspace/react-components';
 import { Blurry } from '../../blurry';
 import { Heading } from '../../heading';
+import { useRouter } from 'next/navigation';
+import { pageRoutes } from '../../../lib/pageRoutes';
 
 type BlockProps = {
   title: string;
@@ -38,6 +40,7 @@ const Block = ({ icon, title }: BlockProps) => {
 
 export const OurServices = () => {
   const ref = useRef<HTMLDivElement>(null);
+  const { push } = useRouter();
 
   useEffect(() => {
     const items = ref.current?.querySelectorAll('.service-item');
@@ -104,10 +107,16 @@ export const OurServices = () => {
         </div>
       </div>
       <div className="flex justify-center mt-12">
-        <Button text="See our services" size="small" />
+        <Button
+          text="See our services"
+          size="small"
+          onClick={() => {
+            push(pageRoutes.services);
+          }}
+        />
       </div>
 
-      <div className="absolute left-0 -translate-x-1/2 -top-1/2 -z-10">
+      <div className="absolute left-1/2 top-1/2  max-md:-translate-y-1/2 md:left-0 -translate-x-1/2 md:-top-1/2 -z-10">
         <Blurry height={1200} width={1200} />
       </div>
     </div>

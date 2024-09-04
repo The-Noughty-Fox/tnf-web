@@ -32,5 +32,6 @@ export * from './lib/icons/figma-svg';
 export * from './lib/icons/upwork-svg';
 export * from './lib/icons/upwork-svg-2';
 export * from './lib/icons/x-svg';
+export * from './lib/icons/caret-down-svg';
 export * from './lib/not-found';
 export * from './lib/slider';
