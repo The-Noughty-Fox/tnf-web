@@ -1,0 +1,25 @@
+---
+import Container from '../../layouts/Container.astro'
+interface Props {
+  src: string;
+  width?: number;
+  height?: number;
+  maxHeight?: number;
+  loop?: boolean;
+}
+const { src, width, height, maxHeight, loop = true } = Astro.props;
+---
+
+<div class='bleed'>
+  <Container>
+    <video src={src} style={`max-height: ${maxHeight ? `${maxHeight}px` : 'auto'};`} class="w-full h-auto" controls={false} width={width} height={height} autoplay loop={loop} muted playsinline  />
+  </Container>
+</div>
+
+
+<!--<figure class="bleed">-->
+<!--  <Container>-->
+<!--    <img style={`max-height: ${maxHeight ? `${maxHeight}px` : 'auto'};`} class="object-cover w-full h-auto" src={src} alt={alt} width={width} height={height} />-->
+<!--    <figcaption class="font-bold">{caption}</figcaption>-->
+<!--  </Container>-->
+<!--</figure>-->
