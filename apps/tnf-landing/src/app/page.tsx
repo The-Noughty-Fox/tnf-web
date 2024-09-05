@@ -8,6 +8,8 @@ import { CoreTeam } from '../components/core-team';
 import { Contacts } from '../components/contacts';
 import { testimonials } from '../lib/data/testimonials';
 import { ArrowUpRightSvg } from '@tnf-workspace/react-components';
+import { ExploreOther } from '../components/explore-other';
+import { projectCards } from '../lib/data/projectCards';
 
 export default function Index() {
   return (
@@ -15,6 +17,9 @@ export default function Index() {
       <Hero />
       <section className="mt-80p*200p">
         <OurServices />
+      </section>
+      <section className="mt-80p*200p">
+        <ExploreOther title="Our projects" projects={projectCards} />
       </section>
       <section className="mt-80p*200p">
         <PingUs />
