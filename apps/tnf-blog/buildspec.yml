@@ -1,0 +1,28 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - echo Install dependencies
+      - cd $CODEBUILD_SRC_DIR/apps/tnf-blog
+      - npm install
+
+  build:
+    commands:
+      - echo Build process started now
+      - cd $CODEBUILD_SRC_DIR/apps/tnf-blog
+      - npm run build
+
+  post_build:
+    commands:
+      - echo Build process finished, upload artifacts to S3 bucket
+      - cd $CODEBUILD_SRC_DIR/dist/apps/tnf-blog
+      - ls -la
+
+artifacts:
+  base-directory: 'dist/apps/tnf-blog*'
+  discard-paths: no
+  files:
+    - '**/*'
+

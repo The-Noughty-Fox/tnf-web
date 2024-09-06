@@ -9,7 +9,8 @@
     "blog:start": "nx dev tnf-blog",
     "blog:build": "nx build tnf-blog",
     "blog:preview": "nx preview tnf-blog",
-    "ts-lib:build": "nx build ts-lib"
+    "ts-lib:build": "nx build ts-lib",
+    "build": "nx run-many --target=build --all"
   },
   "private": true,
   "dependencies": {
