@@ -1,33 +1,18 @@
 AWSTemplateFormatVersion: 2010-09-09
 
-## =================== DESCRIPTION =================== ##
-Description: >-
-  AWS CloudFormation template for automatically build of static website hosted on S3
-  - Create a new S3 bucket and it's policy, configure it to host a static website
-  - Create a CodeBuild project to build the static website
-  - Create a CodeBuild project role with necessary permissions
-  - Create a CloudWatch log group for CodeBuild project
-
-
-## =================== PARAMETERS =================== ##
 Parameters:
-  paramPersonalGitHubAccessToken:
+  paramACMCertificateArn:
+    Description: Public SSL/TLS certificate ARN published by AWS Certificate Manager (ACM)
     Type: String
-    MinLength: 10
-    ConstraintDescription: Personal GitHub access token is missing
-    Description: Provide your personal GitHub access token for CodeBuild to access your GitHub repo
 
-  paramGitHubLink:
+  paramRootDomain:
+    Description: Specify a root domain for your website (such as example.com)
     Type: String
-    Description: Provide your GitHub link with source code for static website
-    Default: https://github.com/The-Noughty-Fox/tnf-web
 
-  paramStaticWebsiteHostingBucketName:
-    Description: Specify a unique name for S3 bucket that will host static website
+  paramSubdomain:
+    Description: OPTIONAL. Specify a subdomain (such as 'www' or 'apex' for www.example.com or apex.example.com). You can leave it empty to skip.
     Type: String
-    Default: website-hosting-bucket
-    AllowedPattern: "(?!(^xn--|.+-s3alias$))^[a-z0-9][a-z0-9-]{1,61}[a-z0-9]$"  # includes using S3 Transfer Acceleration
-    ConstraintDescription: Bucket names must be between 3 (min) and 63 (max) characters long, can consist only of lowercase letters, numbers, dots, and hyphens, must begin and end with a letter or number, etc.
+    Default: www
 
   paramUniqueTagName:
     Description: Specify a unique name for tag
@@ -36,142 +21,207 @@ Parameters:
     AllowedPattern: "[\\x20-\\x7E]*"
     ConstraintDescription: Must contain only ASCII characters
 
-## =================== RESOURCES =================== ##
-Resources:
 
-#   Create a new S3 bucket and configure it to host a static website
-  staticWebsiteHostingBucket:
-    Type: 'AWS::S3::Bucket'
-    DeletionPolicy: Delete #allow CloudFormation delete the bucket when stack is deleted
+Resources:
+  cloudFrontOAI:
+    Type: 'AWS::CloudFront::CloudFrontOriginAccessIdentity'
     Properties:
-      BucketName: !Ref paramStaticWebsiteHostingBucketName
+      CloudFrontOriginAccessIdentityConfig:
+        # a comment to describe the origin access identity
+        Comment: 'OAI for S3 origins'
+
+  s3BucketForSubdomain:
+    Type: 'AWS::S3::Bucket'
+    DeletionPolicy: Delete # keep S3 bucket when its stack is deleted
+    Properties:
+      BucketName: blog.thenoughtyfox.com # use the name of subdomain with domain, such as www.example.com
       WebsiteConfiguration:
         IndexDocument: index.html
         ErrorDocument: 404.html
-      VersioningConfiguration:
+      VersioningConfiguration: # turn versioning on in case we need to rollback newly built files to older version
         Status: Enabled
-      # AccessControl: PublicRead # throws an error: Bucket cannot have public ACLs set with BlockPublicAccess enabled
-      OwnershipControls:
-        Rules:
-          - ObjectOwnership: ObjectWriter
-      PublicAccessBlockConfiguration:
-        BlockPublicAcls: false
-        BlockPublicPolicy: false
-        IgnorePublicAcls: false
-        RestrictPublicBuckets: false
+      AccessControl: BucketOwnerFullControl
+
+  RedirectBucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: 'www.blog.thenoughtyfox.com'
+      WebsiteConfiguration:
+        RedirectAllRequestsTo:
+          HostName: 'blog.thenoughtyfox.com'
+          Protocol: 'https'
+
+
+  cloudFrontDistributionForSubdomain:
+    Type: 'AWS::CloudFront::Distribution'
+    Properties:
+      DistributionConfig:
+        Comment: CloudFront distribution for blog.example.com
+        Origins:
+          - DomainName: !Sub '${paramSubdomain}.${paramRootDomain}.s3-website-${AWS::Region}.amazonaws.com' # S3 website endpoint for subdomain
+            Id: !Sub 'BlogS3Origin-${paramSubdomain}.${paramRootDomain}' # Unique identifier for the subdomain S3 origin
+            CustomOriginConfig: # Since it's a website endpoint, use CustomOriginConfig
+              HTTPPort: 80
+              HTTPSPort: 443
+              OriginProtocolPolicy: 'http-only' # Use HTTP to access S3 website endpoint
+        Aliases:
+          - !Sub '${paramSubdomain}.${paramRootDomain}' # Use blog.example.com as the alias
+        DefaultCacheBehavior:
+          AllowedMethods:
+            - GET
+            - HEAD
+            - OPTIONS
+          CachedMethods:
+            - GET
+            - HEAD
+          Compress: true
+          DefaultTTL: 3600
+          ForwardedValues:
+            QueryString: false
+            Cookies:
+              Forward: none
+          MinTTL: 60
+          MaxTTL: 86400
+          TargetOriginId: !Sub 'BlogS3Origin-${paramSubdomain}.${paramRootDomain}'
+          ViewerProtocolPolicy: 'redirect-to-https'
+        CustomErrorResponses:
+          - ErrorCode: 403
+            ResponseCode: 404
+            ResponsePagePath: '/error.html'
+            ErrorCachingMinTTL: 60
+        Enabled: true
+        HttpVersion: http2
+        PriceClass: PriceClass_All
+        ViewerCertificate:
+          AcmCertificateArn: !Ref paramACMCertificateArn
+          SslSupportMethod: sni-only
+        DefaultRootObject: 'index.html'
       Tags:
         - Key: tnf-blog-cloudformation
-          Value:  !Ref paramUniqueTagName
+          Value: !Ref paramUniqueTagName
+
+  RedirectBlogWwwDistribution:
+    Type: 'AWS::CloudFront::Distribution'
+    Properties:
+      DistributionConfig:
+        Comment: 'Redirect from www.blog.thenoughtyfox.com to blog.thenoughtyfox.com'
+        Origins:
+          - DomainName: !Sub 'www.blog.thenoughtyfox.com.s3-website-${AWS::Region}.amazonaws.com'
+            Id: 'S3-www.blog.thenoughtyfox.com'
+            CustomOriginConfig:
+              HTTPPort: 80
+              HTTPSPort: 443
+              OriginProtocolPolicy: 'http-only'
+        Aliases:
+          - 'www.blog.thenoughtyfox.com'
+        DefaultCacheBehavior:
+          AllowedMethods:
+            - GET
+            - HEAD
+            - OPTIONS
+          CachedMethods:
+            - GET
+            - HEAD
+          Compress: true
+          DefaultTTL: 3600
+          ForwardedValues:
+            QueryString: false
+            Cookies:
+              Forward: none
+          MinTTL: 60
+          MaxTTL: 86400
+          TargetOriginId: 'S3-www.blog.thenoughtyfox.com'
+          ViewerProtocolPolicy: 'redirect-to-https'
+        Enabled: true
+        HttpVersion: http2
+        PriceClass: PriceClass_All
 
 
-  # Create a policy for staticWebsiteHostingBucket to give a public access to website
-  staticWebsiteHostingBucketPolicy:
+  policyForS3BucketForSubdomain:
     Type: 'AWS::S3::BucketPolicy'
     Properties:
-      Bucket: !Ref staticWebsiteHostingBucket
+      Bucket: !Ref s3BucketForSubdomain
       PolicyDocument:
-        Version: 2012-10-17
         Statement:
-          - Sid: PublicReadForGetBucketObjects
+          - Action: 's3:GetObject'
             Effect: Allow
-            Principal: '*'
-            Action: 's3:GetObject'
-            Resource: !Join
-              - ''
-              - - 'arn:aws:s3:::'
-                - !Ref staticWebsiteHostingBucket
-                - /*
-
-  codeBuildSourceCredential:
-    Type: AWS::CodeBuild::SourceCredential
-    Properties:
-      AuthType: PERSONAL_ACCESS_TOKEN
-      ServerType: GITHUB
-      Token: !Ref paramPersonalGitHubAccessToken
-
-  codeBuildProject:
-    Type: AWS::CodeBuild::Project
-    Properties:
-      Name: codebuild-for-tnf-blog
-      Description: CodeBuild project for automatically build of static website hosted on s3
-      Source:
-        Type: GITHUB
-        Location: https://github.com/The-Noughty-Fox/tnf-web.git
-        GitCloneDepth: 1
-        BuildSpec: apps/tnf-blog/buildspec.yml
-        Auth:
-          Resource: !Ref codeBuildSourceCredential
-          Type: OAUTH
-      Triggers:
-        Webhook: true
-        FilterGroups:
-          - - Type: EVENT
-              Pattern: PUSH
-            - Type: HEAD_REF
-              Pattern: ^refs/heads/main # for feature branches use: ^refs/heads/feature/.*
-      Environment: # use Ubuntu standard v7
-        Type: LINUX_CONTAINER
-        ComputeType: BUILD_GENERAL1_SMALL
-        Image: aws/codebuild/standard:7.0
-      Artifacts: # drop the build artifacts of S3 bucket that hosts static website
-        Type: S3
-        Name: '/' # store the artifact in the root of the output bucket
-        Location: !Sub arn:aws:s3:::tnf-blog-bucket
-        EncryptionDisabled: True #disable the encryption of artifacts in a build to see html pages
-      LogsConfig:
-        CloudWatchLogs:
-          Status: ENABLED
-          GroupName: tnf-blog-cloudwatch-logs
-      ServiceRole: !Ref codeBuildProjectRole
-
-  codeBuildProjectRole:
-    Type: AWS::IAM::Role
-    Properties:
-      RoleName: tnf-blog-codebuild-role
-      Path: /
-      AssumeRolePolicyDocument:
-        Version: 2012-10-17
-        Statement:
-          - Action:
-              - 'sts:AssumeRole'
-            Effect: Allow
+            Resource: !Sub 'arn:aws:s3:::${paramSubdomain}.${paramRootDomain}/*'
             Principal:
-              Service:
-                - codebuild.amazonaws.com
-      Policies:
-        - PolicyName: tnf-blog-codebuild-policy
-          PolicyDocument:
-            Version: 2012-10-17
-            Statement:
-              # statement to create/stream CloudWatch
-              - Action:
-                  - logs:CreateLogGroup
-                  - logs:CreateLogStream
-                  - logs:PutLogEvents
-                Effect: Allow
-                Resource:
-                  - !Sub arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:tnf-blog-cloudwatch-logs
-                  - !Sub arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:tnf-blog-cloudwatch-logs:*
-              # statement to access S3 bucket that hosts static website (CodeBuild will save Artifacts there)
-              - Action:
-                  - s3:PutObject
-                  - s3:GetObject
-                  - s3:GetObjectVersion
-                  - s3:GetBucketAcl
-                  - s3:GetBucketLocation
-                Effect: Allow
-                Resource:
-                  - arn:aws:s3:::tnf-blog-bucket
-                  - arn:aws:s3:::tnf-blog-bucket/*
+              CanonicalUser: !GetAtt cloudFrontOAI.S3CanonicalUserId
+          # deny access for non SSL access to S3 bucket
+          - Sid: AllowSSLRequestsOnly
+            Effect: Deny
+            Principal: '*'
+            Action: 's3:*'
+            Resource:
+              - !Sub 'arn:aws:s3:::${paramSubdomain}.${paramRootDomain}'
+              - !Sub 'arn:aws:s3:::${paramSubdomain}.${paramRootDomain}/*'
+            Condition:
+              Bool:
+                'aws:SecureTransport': false
+
+  policyForS3BucketForReirect:
+    Type: 'AWS::S3::BucketPolicy'
+    Properties:
+      Bucket: !Ref RedirectBucket
+      PolicyDocument:
+        Statement:
+          - Action: 's3:GetObject'
+            Effect: Allow
+            Resource: !Sub 'arn:aws:s3:::www.${paramSubdomain}.${paramRootDomain}/*'
+            Principal:
+              CanonicalUser: !GetAtt cloudFrontOAI.S3CanonicalUserId
+          # deny access for non SSL access to S3 bucket
+          - Sid: AllowSSLRequestsOnly
+            Effect: Deny
+            Principal: '*'
+            Action: 's3:*'
+            Resource:
+              - !Sub 'arn:aws:s3:::www.${paramSubdomain}.${paramRootDomain}'
+              - !Sub 'arn:aws:s3:::www.${paramSubdomain}.${paramRootDomain}/*'
+            Condition:
+              Bool:
+                'aws:SecureTransport': false
+
+  route53RecordSetForSubdomain:
+    Type: 'AWS::Route53::RecordSet'
+    Properties:
+      HostedZoneName: !Sub '${paramRootDomain}.'
+      Name: !Sub '${paramSubdomain}.${paramRootDomain}.'
+      Type: A
+      AliasTarget:
+        HostedZoneId: Z032982169MDEWMQDI8M # CloudFront hosted zone ID for alias records
+        DNSName: !GetAtt cloudFrontDistributionForSubdomain.DomainName
+      TTL: '300'
+
+  route53RecordSetForWWWSubdomain:
+    Type: 'AWS::Route53::RecordSet'
+    Properties:
+      HostedZoneName: !Sub '${paramRootDomain}.'
+      Name: !Sub 'www.${paramSubdomain}.${paramRootDomain}.'
+      Type: A
+      AliasTarget:
+        HostedZoneId: Z032982169MDEWMQDI8M # CloudFront hosted zone ID for alias records
+        DNSName: !GetAtt RedirectBlogWwwDistribution.DomainName
+      TTL: '300'
+
 
 ## =================== OUTPUT =================== ##
 Outputs:
-  outputWebsiteURL:
-    Value: !GetAtt
-      - staticWebsiteHostingBucket
-      - WebsiteURL
-    Description: Static website URL
+  outputCloudFrontDistributionForSubdomainId:
+    Description: CloudFront distribution ID for subdomain
+    Value: !Ref cloudFrontDistributionForSubdomain
 
-  outputCodeBuildProject:
-    Description: CodeBuild project name
-    Value: !Ref codeBuildProject
+  outputRedirectBlogWwwDistributionId:
+      Description: CloudFront distribution ID for redirect
+      Value: !Ref RedirectBlogWwwDistribution
+
+  outputS3BucketForSubdomain:
+    Description: S3 bucket for subdomain
+    Value: !Ref s3BucketForSubdomain
+
+  outputRedirectBucket:
+    Description: S3 bucket for redirect
+    Value: !Ref RedirectBucket
+
+
