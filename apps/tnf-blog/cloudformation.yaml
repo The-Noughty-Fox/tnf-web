@@ -46,7 +46,7 @@ Resources:
     Properties:
       BucketName: !Ref paramStaticWebsiteHostingBucketName
       WebsiteConfiguration:
-        IndexDocument: blog/index.html
+        IndexDocument: index.html
         ErrorDocument: 404.html
       VersioningConfiguration:
         Status: Enabled

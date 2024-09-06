@@ -1,9 +1,8 @@
 ---
-import { CollectionEntry, getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
-import Layout from "../../layouts/Layout.astro";
-import {dateTimeFormat} from "astro/dist/core/logger/core";
-import { Container } from '@tnf-workspace/react-components'
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+import Layout from "../layouts/Layout.astro";
+import Container from "../layouts/Container.astro";
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
