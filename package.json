@@ -22,7 +22,6 @@
     "lenis": "^1.1.13",
     "mdast-util-to-string": "^4.0.0",
     "nanostores": "^0.11.3",
-    "next": "14.2.3",
     "react": "18.3.1",
     "react-calendly": "^4.3.1",
     "react-dom": "18.3.1",
@@ -32,6 +31,7 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "next": "14.2.3",
     "@astrojs/check": "^0.5.2",
     "@astrojs/mdx": "^3.1.5",
     "@astrojs/react": "^3.6.2",
