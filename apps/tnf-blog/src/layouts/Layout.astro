@@ -5,16 +5,17 @@ import { Bootstrap } from '../components/bootstrap'
 import { containerPx, containerPxLg, containerPxMd } from '../../../../ts-lib/src';
 import { Header } from '@tnf-workspace/react-components'
 import { Footer } from '../components/footer'
+import { pageRoutes } from '../lib/pageRoutes'
 interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
 const links = [
-  {name: 'Services', href: '/blog'},
-  {name: 'Portfolio', href: '#'},
-  {name: 'Contact us', href: '#'},
-  {name: 'Blog', href: '#'}
+  {name: pageRoutes.services.label, href: pageRoutes.services.href },
+  {name: pageRoutes.portfolio.label, href: pageRoutes.services.href },
+  {name: pageRoutes.contactUs.label, href: pageRoutes.contactUs.href},
+  {name: pageRoutes.blog.label, href: pageRoutes.blog.href }
 ]
 ---
 
@@ -46,7 +47,7 @@ const links = [
 	<body>
        <div class="flex flex-col h-full">
          <Bootstrap client:load />
-         <Header client:load links={links} />
+         <Header client:load links={links} homeLink={import.meta.env.PUBLIC_TNF_DOMAIN} />
          <main class="flex-1">
            <slot />
          </main>

@@ -46,3 +46,6 @@ Thumbs.db
 out
 
 .astro
+
+apps/*/.env*
+!apps/*/.env.sample

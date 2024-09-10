@@ -14,6 +14,7 @@ type HeaderProps = {
   Link?: ReactElement;
   onMenuToggle?: (isOpened: boolean) => void;
   activeLink?: string;
+  homeLink?: string;
 };
 
 export const Header = ({
@@ -21,6 +22,7 @@ export const Header = ({
   Link,
   onMenuToggle,
   activeLink,
+  homeLink = '/',
 }: HeaderProps) => {
   const navRef = useRef<HTMLElement>(null);
   const [isMenuOpened, setIsMenuOpened] = useState(false);
@@ -152,7 +154,7 @@ export const Header = ({
     <header className="w-full relative z-30">
       <Container>
         <div className="flex items-center py-4 lg:py-12">
-          <Logo href="/" />
+          <Logo href={homeLink} />
 
           <Burger
             isActive={isMenuOpened}

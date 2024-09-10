@@ -4,30 +4,33 @@ import {
   Footer as FooterComponent,
 } from '@tnf-workspace/react-components';
 import * as process from 'node:process';
-
-type FooterProps = {};
+import { pageRoutes } from '../lib/pageRoutes';
 
 export const Footer = () => {
   return (
     <FooterComponent
       client:load
       links={[
-        { href: '#', name: 'Services' },
-        { href: '/', name: 'Blog' },
-        { href: '#', name: 'Portfolio' },
-        { href: '#', name: 'Contact us' },
-        { href: '#', name: 'Q & A' },
-        { href: '#', name: 'Privacy & Terms' },
+        { href: pageRoutes.services.href, name: pageRoutes.services.label },
+        { href: pageRoutes.blog.href, name: pageRoutes.blog.label },
+        { href: pageRoutes.portfolio.href, name: pageRoutes.portfolio.label },
+        { href: pageRoutes.qAndA.href, name: pageRoutes.qAndA.label },
+        {
+          href: pageRoutes.privacyAndTerms.href,
+          name: pageRoutes.privacyAndTerms.label,
+        },
+        { href: pageRoutes.contactUs.href, name: pageRoutes.contactUs.label },
       ]}
       ContactUs={
         <Button
           text="Contact us"
           onClick={() => {
-            window.location.href = process.env.PUBLIC_CONTACT_US_PAGE;
+            window.location.href = pageRoutes.contactUs.href;
           }}
           size="small"
         />
       }
+      linkToHome={pageRoutes.home.href}
     />
   );
 };
