@@ -21,7 +21,7 @@ import { Container } from '@tnf-workspace/react-components'
 
 const {title, subTitle, pubDate, author, cover, minutesRead} = Astro.props;
 const pageTitle = `Blog ${title} | TNF Blog`
-const posts = await getCollection('blog');
+const posts = await getCollection('posts');
 const authorPosts = posts.filter(post => post.data.author.name === author.name);
 ---
 

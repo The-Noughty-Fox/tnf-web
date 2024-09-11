@@ -31,4 +31,8 @@ export const pageRoutes = {
     label: 'Contact Us',
     href: `${import.meta.env.PUBLIC_TNF_DOMAIN}/contact-us`,
   },
+  postDetails: {
+    label: 'Post Details',
+    href: (slug: string) => `/posts/${slug}`,
+  },
 };

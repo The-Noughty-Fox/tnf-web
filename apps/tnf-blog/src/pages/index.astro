@@ -3,8 +3,9 @@ import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 import Layout from "../layouts/Layout.astro";
 import Container from "../layouts/Container.astro";
+import { pageRoutes } from '../lib/pageRoutes';
 
-const posts = (await getCollection('blog')).sort(
+const posts = (await getCollection('posts')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
@@ -18,7 +19,7 @@ const posts = (await getCollection('blog')).sort(
 								{
 									posts.map((post) => (
                           <li>
-                              <a href={`/blog/${post.slug}/`}>
+                              <a href={pageRoutes.postDetails.href(post.slug)}>
 		                              <div class='aspect-video w-full'>
 				                              <img src={post.data.cover} class="w-full h-full object-cover" />
 		                              </div>

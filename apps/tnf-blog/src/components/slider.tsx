@@ -1,4 +1,6 @@
 import { Slider as SliderComponent } from '@tnf-workspace/react-components';
+import { pageRoutes } from '../lib/pageRoutes.ts';
+import { getFormattedDate } from '../lib/utils/getFormattedDate.ts';
 
 type SliderProps = {
   posts: {
@@ -21,7 +23,7 @@ export const Slider = ({ posts, className }: SliderProps) => {
       {posts.map((post) => (
         <a
           key={post.slug}
-          href={`/blog/${post.slug}/`}
+          href={pageRoutes.postDetails.href(post.slug)}
           className="inline-block max-w-[322px]"
         >
           <div class="aspect-video w-full">
@@ -36,11 +38,7 @@ export const Slider = ({ posts, className }: SliderProps) => {
             </div>
             <div class="ml-2 text-[14px] leading-1">{post.author.name}</div>
             <div class="ml-auto text-[14px] leading-1">
-              {post.pubDate.toLocaleDateString('en-us', {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric',
-              })}
+              {getFormattedDate(post.pubDate)}
             </div>
           </div>
           <h4 class="title mt-4 text-h6 line-clamp-2">{post.title}</h4>

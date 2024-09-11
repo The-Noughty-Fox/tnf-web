@@ -5,7 +5,7 @@ subTitle: 'What Elon Musk and Jeff Bezos aren’t telling'
 pubDate: 'Jul 01 2022'
 author: {
     name: 'John Doe',
-    avatar: '/blog-placeholder-1.jpg',
+    avatar: '/posts-placeholder-1.jpg',
     role: 'CTO and Co-founcder @ TNF'
 }
 ---
