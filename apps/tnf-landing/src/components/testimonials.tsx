@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import { Heading } from './heading';
 import { text } from '../lib/text';
 import { Slider } from './slider';
+import Image from 'next/image';
 
 type TestimonialsProps = {
   testimonials: {
@@ -45,14 +46,16 @@ export const Testimonials = ({ testimonials }: TestimonialsProps) => {
                 maxWidth: 'min(80vw, 586px)',
               }}
             >
-              <div>&quot{testimonial.text}&quot</div>
+              <div>{testimonial.text}</div>
               <div className="flex gap-3 md:gap-5 mt-12">
-                <div className="rounded-full bg-orange-800 min-w-12 w-12 h-12 md:w-15 md:h-15 row-span-2"></div>
+                <div className="rounded-full min-w-12 w-12 h-12 md:w-15 md:h-15 row-span-2 overflow-hidden">
+                  <Image src={testimonial.thumbnail} alt={testimonial.name} className='image-cover' />
+                </div>
                 <div className="flex flex-col justify-center">
                   <div className="text-h6 uppercase">{testimonial.name}</div>
                   <div className="flex gap-1 flex-wrap text-body font-normal mt-2">
                     <div>{testimonial.role}</div>
-                    <div>@{testimonial.company}</div>
+                    <div>@ {testimonial.company}</div>
                   </div>
                 </div>
               </div>
