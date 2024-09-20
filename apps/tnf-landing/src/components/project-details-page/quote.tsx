@@ -19,7 +19,7 @@ export const Quote = ({ author, text }: QuoteProps) => {
         <b className="mr-2 flex items-center gap-2 before:w-2 before:h-2 before:rounded-full before:bg-white before:block">
           {author.name}
         </b>
-        {author.role} @{author.company}
+        {author.role} @ {author.company}
       </div>
     </div>
   );

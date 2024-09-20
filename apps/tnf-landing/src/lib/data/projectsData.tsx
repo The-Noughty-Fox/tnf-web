@@ -94,106 +94,100 @@ export type ProjectDataItemType = {
 
 type ProjectDataType = Record<ProjectType, ProjectDataItemType>;
 
-export const projectsData: ProjectDataType = {
-  enclaves: {
-    socials: [
-      { link: 'https://google.com', type: 'app store' },
-      { link: '', type: 'google play' },
-      { link: '', type: 'figma' },
-      { link: '', type: 'upwork' },
-    ],
-    title: 'Enclaves',
-    description: 'Walk, conquer, and compete with others',
-    img: {
-      x1: EnclavesImg_main,
-      mobile: EnclavesImg_mobile,
-    },
-    slides: {
-      width: 300,
-      items: [
-        EnclavesImg_challenges,
-        EnclavesSlide1,
-        EnclavesSlide2,
-        EnclavesSlide3,
-        EnclavesSlide4,
-        EnclavesSlide5,
-        EnclavesSlide6,
-      ],
-    },
-    challengesImg: {
-      src: EnclavesImg_challenges,
-      width: 358,
-    },
-    technologies: [
-      'swift',
-      'swiftUi',
-      'uiKit',
-      'kotlin',
-      'jetpackCompose',
-      'mapbox',
-      'h3',
-    ],
-    challengesAndSolutions: [
-      {
-        challenge:
-          '<em>Challenge</em> number 1 was very hard, at first we didn’t know how to do it.',
-        solution:
-          'Solution number 1, since we are very professional guys we managed to find solution quickly.',
-      },
-      {
-        challenge:
-          'Challenge number 2 was even more harder, at first we didn’t know how to do it.',
-        solution:
-          'Solution number 2, since we are kapet very professional guys we managed to find solution efficiently.',
-      },
-      {
-        challenge:
-          'Challenge number 3 at first seemed easy, but then turned out very hard.',
-        solution:
-          'Solution number 3, since we are cine stie professional guys we managed to find solution for this too.',
-      },
-    ],
-    projectInfo: {
-      infoTitle: 'App that will boost your activity.',
-      infoDescription: `Enclaves is a personal project of mine that<br> I wanted to get into the world. I envisioned the app back in 2020, and, after many iterations, team meetings, and beta tests, in 2023 I released it to the public. It revolves around walking and conquering territories in your city, competing with other people and discovering new places, and is one of a kind.`,
-      infoItems: [
-        { label: 'Industries', value: 'Fitness' },
-        { label: 'Services', value: 'iOS, Android' },
-        {
-          label: 'Team',
-          value: '1 Android dev,<br> 1 iOS devs,<br> Backend dev',
-        },
-        { label: 'Country', value: 'USA' },
-        { label: 'Year', value: '2021' },
-        { label: 'Duration', value: '6 month' },
-      ],
-    },
-    projectScope: {
-      projectScopeTitle: 'Project scope (this one will be optional)',
-      projectScopeDescription: `A short description, here we will give a sneak pic to intrigue the reader, like we had a super puper had technical problem and we managed to solve it in a blink of an eye.
-      `,
-    },
-    quote: {
-      text: (
-        <>
-          Very communicative and <b>pleasant to work with, highly motivated</b>{' '}
-          and eager to provide the best possible solution. They respond quickly,
-          have great skills, and vast relevant knowledge. They{' '}
-          <b>provided excellent plans</b> and timelines for a complex project.
-        </>
-      ),
-      author: {
-        name: 'Oren Cohen',
-        role: 'VP of R&D',
-        company: 'ResonAI',
-      },
-    },
-    results: [
-      { label: 'Downloads', value: '10k' },
-      { label: 'Active users', value: '5k' },
-      { label: 'AppStore Rating', value: '4.5' },
+const enclaves: ProjectDataItemType = {
+  socials: [
+    { link: 'https://apps.apple.com/lt/app/enclaves/id1621019774', type: 'app store' },
+    { link: 'https://play.google.com/store/apps/details?id=com.thenoughtyfox.enclaves&hl=en_US', type: 'google play' },
+    { link: 'https://www.figma.com/design/f6rym01amKjsxRamBQCKl6/Enclaves-app?node-id=11-55&t=We8gZEiKuNJ5es2x-1', type: 'figma' },
+  ],
+  title: 'Enclaves',
+  description: 'Walk, conquer, and compete with others',
+  img: {
+    x1: EnclavesImg_main,
+    mobile: EnclavesImg_mobile,
+  },
+  slides: {
+    width: 300,
+    items: [
+      EnclavesImg_challenges,
+      EnclavesSlide1,
+      EnclavesSlide2,
+      EnclavesSlide3,
+      EnclavesSlide4,
+      EnclavesSlide5,
+      EnclavesSlide6,
     ],
   },
+  challengesImg: {
+    src: EnclavesImg_challenges,
+    width: 358,
+  },
+  technologies: [
+    'swift',
+    'swiftUi',
+    'uiKit',
+    'kotlin',
+    'jetpackCompose',
+    'mapbox',
+    'h3',
+  ],
+  challengesAndSolutions: [
+    {
+      challenge: '<em>PERFORMANCE</em><br>Displaying that many elements on a map while keeping the smooth scroll is very challenging.',
+      solution: '<em>MAPBOX</em><br>We ended up using Mapbox and their advanced rendering algorithms to make sure the app runs smoothly on all devices.',
+    },
+    {
+      challenge: '<em>WALKING DETECTION</em><br>Detecting accurately whether the user is currently walking or not proved to be a big challenge.',
+      solution: '<em>SENSOR PIPELINE</em><br>We built a pipeline involving the accelerometer, gyroscope and GPS data to accurately detect the user’s activity.',
+    },
+    {
+      challenge: '<em>CLUSTERING</em><br>Clustering users\' walking paths on into something tangible on a map was a challenge we struggled to solve for a long time.',
+      solution: '<em>H3</em><br>We ended up using Uber\'s H3 library to cluster the paths, and it solved many other issues in the process.',
+    },
+  ],
+  projectInfo: {
+    infoTitle: 'Conquer your city',
+    infoDescription: 'Walk out the door, put the phone in your pocket and re-discover your city. <br><br>Compete with friends and people from your city for the biggest territory!',
+    infoItems: [
+      { label: 'Industries', value: 'Fitness<br>Gaming' },
+      { label: 'Services', value: 'Mobile<br>Backend<br>Design' },
+      {
+        label: 'Team',
+        value: 'Android<br>iOS<br>Backend<br>UX Designer',
+      },
+      { label: 'Country', value: 'Moldova' },
+      { label: 'Year', value: '2021' },
+      { label: 'Duration', value: '1.5 years' },
+    ],
+  },
+  projectScope: {
+    projectScopeTitle: 'Project scope',
+    projectScopeDescription: 'The project involved building a real-time application that would allow users to walk around the city and conquer territories. The app had to be engaging, easy to use, and visually appealing. It should work smoothly on all devices, and displaying that many elements on a map is very challenging.',
+  },
+  quote: {
+    text: (
+      <>
+This was a personal project of mine following <b>my passion for walking and discovering new places</b> in the city.
+
+The project will always stay in my heart as it was the project we <b>built the team and the company</b> around.
+      </>
+    ),
+    author: {
+      name: 'Alex Culeva',
+      role: 'CEO',
+      company: 'The Noguhty Fox',
+    },
+  },
+  results: [
+    { label: 'Walks Finished', value: '11.2k' },
+    { label: 'Coordinates Tracked', value: '4.7M' },
+    { label: 'Countries Walked', value: '17' },
+    { label: 'Hexagons Conquered', value: '47.3k' }
+  ],
+}
+
+export const projectsData: ProjectDataType = {
+  enclaves,
   poolex: {
     socials: [
       { link: '', type: 'app store' },
