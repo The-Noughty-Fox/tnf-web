@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import { Heading } from './heading';
 import { text } from '../lib/text';
 import { Slider } from './slider';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
 type TestimonialsProps = {
   testimonials: {
@@ -12,7 +12,7 @@ type TestimonialsProps = {
     name: string;
     role: string;
     company: string;
-    thumbnail: string;
+    thumbnail: StaticImageData;
   }[];
 };
 
@@ -49,7 +49,11 @@ export const Testimonials = ({ testimonials }: TestimonialsProps) => {
               <div>{testimonial.text}</div>
               <div className="flex gap-3 md:gap-5 mt-12">
                 <div className="rounded-full min-w-12 w-12 h-12 md:w-15 md:h-15 row-span-2 overflow-hidden">
-                  <Image src={testimonial.thumbnail} alt={testimonial.name} className='image-cover' />
+                  <Image
+                    src={testimonial.thumbnail}
+                    alt={testimonial.name}
+                    className="image-cover"
+                  />
                 </div>
                 <div className="flex flex-col justify-center">
                   <div className="text-h6 uppercase">{testimonial.name}</div>

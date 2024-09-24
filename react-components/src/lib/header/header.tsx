@@ -133,6 +133,7 @@ export const Header = ({
   }, []);
 
   const toggleMenu = () => {
+    console.log('alo');
     setIsMenuOpened((isMenuOpened) => {
       if (isMenuOpened) {
         // means menu is closing

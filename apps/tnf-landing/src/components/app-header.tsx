@@ -5,7 +5,7 @@ import { Header, useAppContext } from '@tnf-workspace/react-components';
 import { usePathname } from 'next/navigation';
 
 export const AppHeader = () => {
-  const { lenis } = useAppContext();
+  const { enableScroll, disableScroll } = useAppContext();
   const pathname = usePathname();
 
   return (
@@ -18,9 +18,9 @@ export const AppHeader = () => {
       ]}
       onMenuToggle={(isOpened: boolean) => {
         if (isOpened) {
-          lenis?.stop();
+          disableScroll();
         } else {
-          lenis?.start();
+          enableScroll();
         }
       }}
       Link={<Link href="" />}

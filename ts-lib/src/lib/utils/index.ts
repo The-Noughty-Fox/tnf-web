@@ -3,3 +3,4 @@ export * from './clampValue';
 export * from './generateSpacing';
 export * from './debounce';
 export * from './throttle';
+export * from './isMac';
