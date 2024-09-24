@@ -96,9 +96,18 @@ type ProjectDataType = Record<ProjectType, ProjectDataItemType>;
 
 const enclaves: ProjectDataItemType = {
   socials: [
-    { link: 'https://apps.apple.com/lt/app/enclaves/id1621019774', type: 'app store' },
-    { link: 'https://play.google.com/store/apps/details?id=com.thenoughtyfox.enclaves&hl=en_US', type: 'google play' },
-    { link: 'https://www.figma.com/design/f6rym01amKjsxRamBQCKl6/Enclaves-app?node-id=11-55&t=We8gZEiKuNJ5es2x-1', type: 'figma' },
+    {
+      link: 'https://apps.apple.com/lt/app/enclaves/id1621019774',
+      type: 'app store',
+    },
+    {
+      link: 'https://play.google.com/store/apps/details?id=com.thenoughtyfox.enclaves&hl=en_US',
+      type: 'google play',
+    },
+    {
+      link: 'https://www.figma.com/design/f6rym01amKjsxRamBQCKl6/Enclaves-app?node-id=11-55&t=We8gZEiKuNJ5es2x-1',
+      type: 'figma',
+    },
   ],
   title: 'Enclaves',
   description: 'Walk, conquer, and compete with others',
@@ -133,21 +142,28 @@ const enclaves: ProjectDataItemType = {
   ],
   challengesAndSolutions: [
     {
-      challenge: '<em>PERFORMANCE</em><br>Displaying that many elements on a map while keeping the smooth scroll is very challenging.',
-      solution: '<em>MAPBOX</em><br>We ended up using Mapbox and their advanced rendering algorithms to make sure the app runs smoothly on all devices.',
+      challenge:
+        '<em>PERFORMANCE</em><br>Displaying that many elements on a map while keeping the smooth scroll is very challenging.',
+      solution:
+        '<em>MAPBOX</em><br>We ended up using Mapbox and their advanced rendering algorithms to make sure the app runs smoothly on all devices.',
     },
     {
-      challenge: '<em>WALKING DETECTION</em><br>Detecting accurately whether the user is currently walking or not proved to be a big challenge.',
-      solution: '<em>SENSOR PIPELINE</em><br>We built a pipeline involving the accelerometer, gyroscope and GPS data to accurately detect the user’s activity.',
+      challenge:
+        '<em>WALKING DETECTION</em><br>Detecting accurately whether the user is currently walking or not proved to be a big challenge.',
+      solution:
+        '<em>SENSOR PIPELINE</em><br>We built a pipeline involving the accelerometer, gyroscope and GPS data to accurately detect the user’s activity.',
     },
     {
-      challenge: '<em>CLUSTERING</em><br>Clustering users\' walking paths on into something tangible on a map was a challenge we struggled to solve for a long time.',
-      solution: '<em>H3</em><br>We ended up using Uber\'s H3 library to cluster the paths, and it solved many other issues in the process.',
+      challenge:
+        "<em>CLUSTERING</em><br>Clustering users' walking paths on into something tangible on a map was a challenge we struggled to solve for a long time.",
+      solution:
+        "<em>H3</em><br>We ended up using Uber's H3 library to cluster the paths, and it solved many other issues in the process.",
     },
   ],
   projectInfo: {
     infoTitle: 'Conquer your city',
-    infoDescription: 'Walk out the door, put the phone in your pocket and re-discover your city. <br><br>Compete with friends and people from your city for the biggest territory!',
+    infoDescription:
+      'Walk out the door, put the phone in your pocket and re-discover your city. <br><br>Compete with friends and people from your city for the biggest territory!',
     infoItems: [
       { label: 'Industries', value: 'Fitness<br>Gaming' },
       { label: 'Services', value: 'Mobile<br>Backend<br>Design' },
@@ -162,14 +178,16 @@ const enclaves: ProjectDataItemType = {
   },
   projectScope: {
     projectScopeTitle: 'Project scope',
-    projectScopeDescription: 'The project involved building a real-time application that would allow users to walk around the city and conquer territories. The app had to be engaging, easy to use, and visually appealing. It should work smoothly on all devices, and displaying that many elements on a map is very challenging.',
+    projectScopeDescription:
+      'The project involved building a real-time application that would allow users to walk around the city and conquer territories. The app had to be engaging, easy to use, and visually appealing. It should work smoothly on all devices, and displaying that many elements on a map is very challenging.',
   },
   quote: {
     text: (
       <>
-This was a personal project of mine following <b>my passion for walking and discovering new places</b> in the city.
-
-The project will always stay in my heart as it was the project we <b>built the team and the company</b> around.
+        This was a personal project of mine following{' '}
+        <b>my passion for walking and discovering new places</b> in the city.
+        The project will always stay in my heart as it was the project we{' '}
+        <b>built the team and the company</b> around.
       </>
     ),
     author: {
@@ -182,10 +200,11 @@ The project will always stay in my heart as it was the project we <b>built the t
     { label: 'Walks Finished', value: '11.2k' },
     { label: 'Coordinates Tracked', value: '4.7M' },
     { label: 'Countries Walked', value: '17' },
-    { label: 'Hexagons Conquered', value: '47.3k' }
+    { label: 'Hexagons Conquered', value: '47.3k' },
   ],
-}
+};
 
+/* PORTFOLIO DATA */
 export const projectsData: ProjectDataType = {
   enclaves,
   poolex: {

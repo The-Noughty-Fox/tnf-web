@@ -41,7 +41,7 @@ export const Testimonials = ({ testimonials }: TestimonialsProps) => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="py-8 md:py-15 px-6 md:px-12 rounded-6 md:rounded-10 shadow-main border-1 border-orange-400"
+              className="flex flex-col justify-between h-full py-8 md:py-15 px-6 md:px-12 rounded-6 md:rounded-10 shadow-main border-1 border-orange-400"
               style={{
                 maxWidth: 'min(80vw, 586px)',
               }}
