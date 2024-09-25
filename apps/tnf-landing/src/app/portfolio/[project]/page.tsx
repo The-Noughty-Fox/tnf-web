@@ -2,6 +2,7 @@
 import { notFound } from 'next/navigation';
 import {
   AppleStoreSvg,
+  ArrowUpRightSvg,
   Container,
   FigmaSvg,
   PlayMarketStoreSvg,
@@ -89,12 +90,21 @@ export default function Index({ params }: { params: { project: string } }) {
 
       return (
         <button
-          key="visit"
+          className="flex items-center relative justify-center gap-2 w-[180px] h-[52px] text-woodsmoke-950 rounded-2 bg-white"
+          key="personal"
           onClick={() => {
             window.open(social.link, '_blank');
           }}
         >
-          Visit
+          <ArrowUpRightSvg
+            width={32}
+            height={32}
+            className="absolute left-2 top-1/2 -translate-y-1/2"
+          />
+          <div className="flex flex-col leading-1 text-start ml-13 w-full">
+            <div>Visit the</div>
+            <div className="text-[1.5rem]">Website</div>
+          </div>
         </button>
       );
     });
