@@ -205,6 +205,146 @@ const enclaves: ProjectDataItemType = {
 };
 
 /* PORTFOLIO DATA */
+const wildy: ProjectDataItemType = {
+  socials: [
+    { link: 'https://www.figma.com/design/UHMlrCi4K2aKolP0MjJfyP/Wildy-Training-journal?node-id=1420-4069&t=1CEX2VxHk8wRhx3L-1', type: 'figma' },
+  ],
+  title: 'Wildy',
+  description: 'Making Working Out Fun Again',
+  img: {
+    x1: WildyImg_main,
+    mobile: WildyImg_mobile,
+  },
+  technologies: ['swift', 'swiftUi', 'uiKit', 'kotlin', 'jetpackCompose'],
+  slides: {
+    width: 300,
+    items: [
+      WildySlide1,
+      WildySlide2,
+      WildySlide3,
+      WildySlide4,
+      WildySlide5,
+      WildySlide6,
+    ],
+  },
+  challengesImg: {
+    src: WildyChallengesImg,
+    width: 358,
+  },
+  challengesAndSolutions: [
+    {
+      challenge: '<em>TEMPLATES</em><br>Creating generic enough workout templates that would fit all types of exercises was a challenge',
+      solution: '<em>GENERIC DATA MODEL</em><br>We ended up creating such a generic data model that even a metric type was generic.',
+    },
+    {
+      challenge: '<em>SHARING</em><br>Sharing workout templates with people, letting them edit it and keeping the history was difficult.',
+      solution: '<em>VERSION GRAPH</em><br>We ended up implementing a version graph for the templates, so that people could see the history and reuse specific versions.',
+    },
+  ],
+  projectInfo: {
+    infoTitle: 'Social Training Journal',
+    infoDescription: "Wildy is a social training journal that helps you track your workouts, share them with friends, and get inspired by others.<br><br>It's a fun and engaging way to stay motivated and reach your fitness goals.",
+    infoItems: [
+      { label: 'Industries', value: 'Fitness' },
+      { label: 'Services', value: 'Mobile' },
+      { label: 'Team', value: 'Design' },
+      { label: 'Country', value: 'Moldova' },
+      { label: 'Year', value: '2021' },
+      { label: 'Duration', value: '1 month' },
+    ],
+  },
+  quote: {
+    text: (
+      <>
+        It was a common project of ours following our love for working out and fitness.
+
+        We constantly tracked our workouts in a physical diary, and in order to share it between ourselves we had to basically take photos of a page in that diary.
+      </>
+    ),
+    author: {
+      name: 'Alex Culeva, Victor Lisnic',
+      role: 'CEO, CTO',
+      company: 'The Noughty Fox',
+    },
+  },
+  results: [],
+}
+
+const vera: ProjectDataItemType = {
+  socials: [
+    { link: '', type: 'app store' },
+    { link: '', type: 'google play' },
+  ],
+  title: 'Vera',
+  description:
+    'Vera is elevating the Mall experience by creating an intelligent ecosystem for building management using embedded AI and AR.',
+  img: {
+    x1: VeraImg_main,
+    mobile: VeraMobile,
+  },
+  technologies: ['swift', 'swiftUi', 'uiKit', 'kotlin', 'jetpackCompose'],
+  slides: {
+    width: 330,
+    items: [VeraImg_challenges, VeraSlide1, VeraSlide2, VeraSlide3],
+  },
+  challengesImg: {
+    src: VeraImg_challenges,
+    width: 358,
+  },
+  challengesAndSolutions: [
+    {
+      challenge:
+        'Challenge number 1 was very hard, at first we didn’t know how to do it.',
+      solution:
+        'Solution number 1, since we are very professional guys we managed to find solution quickly.',
+    },
+    {
+      challenge:
+        'Challenge number 2 was even more harder, at first we didn’t know how to do it.',
+      solution:
+        'Solution number 2, since we are kapet very professional guys we managed to find solution efficiently.',
+    },
+    {
+      challenge:
+        'Challenge number 3 at first seemed easy, but then turned out very hard.',
+      solution:
+        'Solution number 3, since we are cine stie professional guys we managed to find solution for this too.',
+    },
+  ],
+  projectInfo: {
+    infoTitle: 'App that will boost your activity.',
+    infoDescription: `Enclaves is a personal project of mine that I wanted to get into the world. I envisioned the app back in 2020, and, after many iterations, team meetings, and beta tests, in 2023 I released it to the public. It revolves around walking and conquering territories in your city, competing with other people and discovering new places, and is one of a kind.`,
+    infoItems: [
+      { label: 'Industries', value: 'Fitness' },
+      { label: 'Services', value: 'iOS, Android' },
+      { label: 'Team', value: '1 Android dev, 1 iOS devs, Backend dev' },
+      { label: 'Country', value: 'USA' },
+      { label: 'Year', value: '2021' },
+      { label: 'Duration', value: '6 month' },
+    ],
+  },
+  quote: {
+    text: (
+      <>
+        Very communicative and <b>pleasant to work with, highly motivated</b>{' '}
+        and eager to provide the best possible solution. They respond quickly,
+        have great skills, and vast relevant knowledge. They{' '}
+        <b>provided excellent plans</b> and timelines for a complex project.
+      </>
+    ),
+    author: {
+      name: 'Oren Cohen',
+      role: 'VP of R&D',
+      company: 'ResonAI',
+    },
+  },
+  results: [
+    { label: 'Downloads', value: '10k' },
+    { label: 'Active users', value: '5k' },
+    { label: 'AppStore Rating', value: '4.5' },
+  ],
+}
+
 export const projectsData: ProjectDataType = {
   enclaves,
   poolex: {
@@ -366,161 +506,8 @@ export const projectsData: ProjectDataType = {
       { label: 'AppStore Rating', value: '4.5' },
     ],
   },
-  vera: {
-    socials: [
-      { link: '', type: 'app store' },
-      { link: '', type: 'google play' },
-    ],
-    title: 'Vera',
-    description:
-      'Vera is elevating the Mall experience by creating an intelligent ecosystem for building management using embedded AI and AR.',
-    img: {
-      x1: VeraImg_main,
-      mobile: VeraMobile,
-    },
-    technologies: ['swift', 'swiftUi', 'uiKit', 'kotlin', 'jetpackCompose'],
-    slides: {
-      width: 330,
-      items: [VeraImg_challenges, VeraSlide1, VeraSlide2, VeraSlide3],
-    },
-    challengesImg: {
-      src: VeraImg_challenges,
-      width: 358,
-    },
-    challengesAndSolutions: [
-      {
-        challenge:
-          'Challenge number 1 was very hard, at first we didn’t know how to do it.',
-        solution:
-          'Solution number 1, since we are very professional guys we managed to find solution quickly.',
-      },
-      {
-        challenge:
-          'Challenge number 2 was even more harder, at first we didn’t know how to do it.',
-        solution:
-          'Solution number 2, since we are kapet very professional guys we managed to find solution efficiently.',
-      },
-      {
-        challenge:
-          'Challenge number 3 at first seemed easy, but then turned out very hard.',
-        solution:
-          'Solution number 3, since we are cine stie professional guys we managed to find solution for this too.',
-      },
-    ],
-    projectInfo: {
-      infoTitle: 'App that will boost your activity.',
-      infoDescription: `Enclaves is a personal project of mine that I wanted to get into the world. I envisioned the app back in 2020, and, after many iterations, team meetings, and beta tests, in 2023 I released it to the public. It revolves around walking and conquering territories in your city, competing with other people and discovering new places, and is one of a kind.`,
-      infoItems: [
-        { label: 'Industries', value: 'Fitness' },
-        { label: 'Services', value: 'iOS, Android' },
-        { label: 'Team', value: '1 Android dev, 1 iOS devs, Backend dev' },
-        { label: 'Country', value: 'USA' },
-        { label: 'Year', value: '2021' },
-        { label: 'Duration', value: '6 month' },
-      ],
-    },
-    quote: {
-      text: (
-        <>
-          Very communicative and <b>pleasant to work with, highly motivated</b>{' '}
-          and eager to provide the best possible solution. They respond quickly,
-          have great skills, and vast relevant knowledge. They{' '}
-          <b>provided excellent plans</b> and timelines for a complex project.
-        </>
-      ),
-      author: {
-        name: 'Oren Cohen',
-        role: 'VP of R&D',
-        company: 'ResonAI',
-      },
-    },
-    results: [
-      { label: 'Downloads', value: '10k' },
-      { label: 'Active users', value: '5k' },
-      { label: 'AppStore Rating', value: '4.5' },
-    ],
-  },
-  wildy: {
-    socials: [
-      { link: '', type: 'app store' },
-      { link: '', type: 'google play' },
-    ],
-    title: 'Wildy',
-    description:
-      'Transform Intention into Action: Simplify Your Start, Track Your Journey, Visualize Your Progress',
-    img: {
-      x1: WildyImg_main,
-      mobile: WildyImg_mobile,
-    },
-    technologies: ['swift', 'swiftUi', 'uiKit', 'kotlin', 'jetpackCompose'],
-    slides: {
-      width: 300,
-      items: [
-        WildySlide1,
-        WildySlide2,
-        WildySlide3,
-        WildySlide4,
-        WildySlide5,
-        WildySlide6,
-      ],
-    },
-    challengesImg: {
-      src: WildyChallengesImg,
-      width: 358,
-    },
-    challengesAndSolutions: [
-      {
-        challenge:
-          'Challenge number 1 was very hard, at first we didn’t know how to do it.',
-        solution:
-          'Solution number 1, since we are very professional guys we managed to find solution quickly.',
-      },
-      {
-        challenge:
-          'Challenge number 2 was even more harder, at first we didn’t know how to do it.',
-        solution:
-          'Solution number 2, since we are kapet very professional guys we managed to find solution efficiently.',
-      },
-      {
-        challenge:
-          'Challenge number 3 at first seemed easy, but then turned out very hard.',
-        solution:
-          'Solution number 3, since we are cine stie professional guys we managed to find solution for this too.',
-      },
-    ],
-    projectInfo: {
-      infoTitle: 'App that will boost your activity.',
-      infoDescription: `Enclaves is a personal project of mine that I wanted to get into the world. I envisioned the app back in 2020, and, after many iterations, team meetings, and beta tests, in 2023 I released it to the public. It revolves around walking and conquering territories in your city, competing with other people and discovering new places, and is one of a kind.`,
-      infoItems: [
-        { label: 'Industries', value: 'Fitness' },
-        { label: 'Services', value: 'iOS, Android' },
-        { label: 'Team', value: '1 Android dev, 1 iOS devs, Backend dev' },
-        { label: 'Country', value: 'USA' },
-        { label: 'Year', value: '2021' },
-        { label: 'Duration', value: '6 month' },
-      ],
-    },
-    quote: {
-      text: (
-        <>
-          Very communicative and <b>pleasant to work with, highly motivated</b>{' '}
-          and eager to provide the best possible solution. They respond quickly,
-          have great skills, and vast relevant knowledge. They{' '}
-          <b>provided excellent plans</b> and timelines for a complex project.
-        </>
-      ),
-      author: {
-        name: 'Oren Cohen',
-        role: 'VP of R&D',
-        company: 'ResonAI',
-      },
-    },
-    results: [
-      { label: 'Downloads', value: '10k' },
-      { label: 'Active users', value: '5k' },
-      { label: 'AppStore Rating', value: '4.5' },
-    ],
-  },
+  vera,
+  wildy,
   testapp: {
     socials: [
       { link: '', type: 'app store' },

@@ -51,7 +51,7 @@ export const projectCards: ProjectCardType[] = [
     ),
     title: 'Enclaves',
     description: 'Walk, conquer, and compete with others',
-    domains: ['Fitness', 'Travel'],
+    domains: ['Fitness', 'Gaming'],
     cta: {
       text: 'View case study',
       link: '#',
@@ -94,8 +94,7 @@ export const projectCards: ProjectCardType[] = [
       />
     ),
     title: 'Wildy',
-    description:
-      'Transform Intention into Action: Simplify Your Start, Track Your Journey, Visualize Your Progress',
+    description: 'Share and Track your Fitness Journey with Everyone',
     domains: ['Fitness'],
     cta: {
       text: 'View case study',
