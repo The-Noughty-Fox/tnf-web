@@ -272,8 +272,9 @@ const wildy: ProjectDataItemType = {
 
 const vera: ProjectDataItemType = {
   socials: [
-    { link: '', type: 'app store' },
-    { link: '', type: 'google play' },
+    { link: 'https://apps.apple.com/il/app/vera-by-resonai/id1518779942', type: 'app store' },
+    { link: 'https://play.google.com/store/apps/details?id=com.resonai.irocket&hl=en', type: 'google play' },
+    { link: 'https://www.resonai.com', type: 'personal' }
   ],
   title: 'Vera',
   description:
@@ -282,7 +283,7 @@ const vera: ProjectDataItemType = {
     x1: VeraImg_main,
     mobile: VeraMobile,
   },
-  technologies: ['swift', 'swiftUi', 'uiKit', 'kotlin', 'jetpackCompose'],
+  technologies: ['swift', 'kotlin', 'arKit', 'arCore', 'gRPC'],
   slides: {
     width: 330,
     items: [VeraImg_challenges, VeraSlide1, VeraSlide2, VeraSlide3],
@@ -293,34 +294,32 @@ const vera: ProjectDataItemType = {
   },
   challengesAndSolutions: [
     {
-      challenge:
-        'Challenge number 1 was very hard, at first we didn’t know how to do it.',
-      solution:
-        'Solution number 1, since we are very professional guys we managed to find solution quickly.',
+      challenge: '<em>PERFORMANCE</em><br>Performance was a big challenge. Running ARKit in 60fps, rendering and communicating with a webview, and processing each frame on-device is very resource-heavy.',
+      solution: '<em>METAL</em><br>We ended up using Metal for rendering, and after off-loading many operations on background threads, we managed to get from 13fps to 60fps.',
     },
     {
-      challenge:
-        'Challenge number 2 was even more harder, at first we didn’t know how to do it.',
-      solution:
-        'Solution number 2, since we are kapet very professional guys we managed to find solution efficiently.',
+      challenge: '<em>RENDER SYNC</em><br>Syncing the ARKit (camera) frames with the webview frames was a challenge as we wanted the content to move in sync with the world.',
+      solution: '<em>FRAME SYNC</em><br>We implemented a custom frame sync mechanism that would not render the ARKit frame until webview wouldn\'t finalize it\'s pipeline, and it worked like a charm.',
     },
     {
-      challenge:
-        'Challenge number 3 at first seemed easy, but then turned out very hard.',
-      solution:
-        'Solution number 3, since we are cine stie professional guys we managed to find solution for this too.',
+      challenge: '<em>ASYNC STATE MANAGEMENT</em><br>Managing the state of the ARKit, webview, GRPC connection, many background services, and the UI was a major challenge.',
+      solution: '<em>THE MALL</em><br>We ended up implementing a custom asynchronous architecture called \'The Mall\' on top of Combine and Coroutines that would fully manage all the state of the app.',
+    },
+    {
+      challenge: '<em>SDK</em><br>Creating an SDK that would allow other developers to create their own experiences on top of Vera was a challenge.',
+      solution: '<em>THE MALL</em><br>We ended up building Native iOS and Android SDKs, and a React Native wrapper on top, along with web SDKs.',
     },
   ],
   projectInfo: {
-    infoTitle: 'App that will boost your activity.',
-    infoDescription: `Enclaves is a personal project of mine that I wanted to get into the world. I envisioned the app back in 2020, and, after many iterations, team meetings, and beta tests, in 2023 I released it to the public. It revolves around walking and conquering territories in your city, competing with other people and discovering new places, and is one of a kind.`,
+    infoTitle: 'AI and AR-powered Digital Twins',
+    infoDescription: `Vera transforms buildings into intelligent digital twins with embedded AI and real-time data, creating environments where people and devices operate seamlessly.<br><br>Vera enables context-aware applications for efficient operations and personalized, engaging experiences in office buildings, retail stores, healthcare facilities and much more.`,
     infoItems: [
-      { label: 'Industries', value: 'Fitness' },
-      { label: 'Services', value: 'iOS, Android' },
-      { label: 'Team', value: '1 Android dev, 1 iOS devs, Backend dev' },
-      { label: 'Country', value: 'USA' },
-      { label: 'Year', value: '2021' },
-      { label: 'Duration', value: '6 month' },
+      { label: 'Industries', value: 'Indoor Navigation<br>Building Management' },
+      { label: 'Services', value: 'iOS<br>Android' },
+      { label: 'Team', value: '1 Android<br>1 iOS' },
+      { label: 'Country', value: 'Israel' },
+      { label: 'Year', value: '2022' },
+      { label: 'Duration', value: '2.5 years' },
     ],
   },
   quote: {
@@ -339,9 +338,9 @@ const vera: ProjectDataItemType = {
     },
   },
   results: [
-    { label: 'Downloads', value: '10k' },
-    { label: 'Active users', value: '5k' },
-    { label: 'AppStore Rating', value: '4.5' },
+    { label: 'Performance', value: '60fps' },
+    { label: 'Business Clients', value: '13' },
+    { label: 'Trips to HQ', value: '8' },
   ],
 }
 

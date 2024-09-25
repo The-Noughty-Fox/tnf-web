@@ -3,6 +3,7 @@ import orenImage from '../../assets/clients/oren_cohen.jpeg';
 import ajinkyaPatil from '../../assets/clients/ajinkya_patil.jpeg';
 import joelRocha from '../../assets/clients/joel_rocha.jpeg';
 import jasonVanBuiten from '../../assets/clients/jason_van_buiten.jpeg';
+import seanFannan from '../../assets/clients/sean_fannan.jpeg';
 
 export const testimonials = [
   {
@@ -39,5 +40,12 @@ export const testimonials = [
     role: 'CEO',
     company: 'Escolha Digital',
     thumbnail: joelRocha,
+  },
+  {
+    text: 'Solid developers, enjoyed working with Alex. Great communication.',
+    name: 'Sean Fannan',
+    role: 'Founder',
+    company: 'Stealth Startup',
+    thumbnail: seanFannan
   }
 ];
