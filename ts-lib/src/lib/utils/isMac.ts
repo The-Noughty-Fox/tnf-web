@@ -1,7 +1,7 @@
 export const isMac = () => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-expect-error
-  return (navigator.userAgentData.platform || navigator.platform).includes(
+  return (navigator.platform || navigator.userAgentData.platform).includes(
     'Mac'
   );
 };
