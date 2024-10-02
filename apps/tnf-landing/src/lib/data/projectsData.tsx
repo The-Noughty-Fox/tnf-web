@@ -344,167 +344,149 @@ const vera: ProjectDataItemType = {
   ],
 }
 
+const poolex: ProjectDataItemType = {
+  socials: [
+    { link: '', type: 'app store' },
+    { link: '', type: 'google play' },
+  ],
+  title: 'Poolex',
+  description: 'What could be more incredible than discovering new people, who want to do the same things as you, with you?',
+  img: {
+    x1: PoolexImg_main,
+    mobile: PoolexImg_mobile,
+  },
+  slides: {
+    width: 320,
+    items: [
+      PoolexImg_challenges,
+      PoolexSlide1,
+      PoolexSlide2,
+      PoolexSlide3,
+      PoolexSlide4,
+    ],
+  },
+  challengesImg: {
+    src: PoolexImg_challenges,
+    width: 358,
+  },
+  technologies: ['swift', 'swiftUi', 'kotlin', 'jetpackCompose'],
+  challengesAndSolutions: [
+    {
+      challenge: '<em>CHATGPT</em><br>Making the integration smooth and real-time',
+      solution: '<em>SOCKETS</em><br>We used sockets to make the chat update real-time and quickly',
+    },
+    {
+      challenge: '<em>RELEVANCE</em><br>We wanted to make the responses as relevant as possible',
+      solution: '<em>ASSISTANT</em><br>We used a customly trained assistant to ',
+    },
+  ],
+  projectInfo: {
+    infoTitle: 'Take better care of your pool',
+    infoDescription: `Poolex was a quick project to help pool owners take better care of their pools. <br><br>It would know all the chemicals you need to add, when to clean the filter, when to change the water, and many more.`,
+    infoItems: [
+      { label: 'Industries', value: 'Chatbot' },
+      { label: 'Services', value: 'Mobile' },
+      { label: 'Team', value: 'Android<br>iOS' },
+      { label: 'Country', value: 'France' },
+      { label: 'Year', value: '2024' },
+      { label: 'Duration', value: '1 month' },
+    ],
+  },
+  projectScope: {
+    projectScopeTitle: 'Pool Assistance',
+    projectScopeDescription: `Having a pool in the backyard is a dream for many people, but taking care of it can be a nightmare.`,
+  },
+  quote: {
+    text: '',
+    author: {
+      name: '',
+      role: '',
+      company: '',
+    },
+  },
+  results: [
+    { label: 'Time to Market', value: '1 month' },
+  ],
+}
+
+const pvolve: ProjectDataItemType = {
+  socials: [
+    { link: 'https://apps.apple.com/us/app/pvolve/id1429328712', type: 'app store' },
+    { link: 'https://play.google.com/store/apps/details?id=com.pvolve.my&hl=en', type: 'google play' },
+    { link: 'https://www.pvolve.com', type: 'personal' },
+  ],
+  title: 'Pvolve',
+  description:
+    'Pvolve is a fitness company with a revolutionary method combining low-impact functional movements with resistance equipment for unbeatable results.',
+  img: {
+    x1: PvolveImg_main,
+    mobile: PvolveImg_mobile,
+  },
+  technologies: ['react', 'nodeJs', 'typescript', 'awsLambda'],
+  slides: {
+    width: 300,
+    items: [PvolveImg_challenges, PvolveImg_main, PvolveSlide1, PvolveSlide2],
+  },
+  challengesImg: {
+    src: PvolveImg_challenges,
+    width: 358,
+  },
+  challengesAndSolutions: [
+    {
+      challenge: '<em>COMPLEXITY</em><br>It was a complex project integrating multiple services and APIs',
+      solution: '<em>BREAKDOWN</em><br>We broke down the project into smaller parts, and slowly learn the whole project',
+    },
+    {
+      challenge:
+        'Challenge number 2 was even more harder, at first we didn’t know how to do it.',
+      solution:
+        'Solution number 2, since we are kapet very professional guys we managed to find solution efficiently.',
+    },
+    {
+      challenge:
+        'Challenge number 3 at first seemed easy, but then turned out very hard.',
+      solution:
+        'Solution number 3, since we are cine stie professional guys we managed to find solution for this too.',
+    },
+  ],
+  projectInfo: {
+    infoTitle: 'App that will boost your activity.',
+    infoDescription: `Enclaves is a personal project of mine that I wanted to get into the world. I envisioned the app back in 2020, and, after many iterations, team meetings, and beta tests, in 2023 I released it to the public. It revolves around walking and conquering territories in your city, competing with other people and discovering new places, and is one of a kind.`,
+    infoItems: [
+      { label: 'Industries', value: 'Fitness' },
+      { label: 'Services', value: 'iOS, Android' },
+      { label: 'Team', value: '1 Android dev, 1 iOS devs, Backend dev' },
+      { label: 'Country', value: 'USA' },
+      { label: 'Year', value: '2021' },
+      { label: 'Duration', value: '6 month' },
+    ],
+  },
+  quote: {
+    text: (
+      <>
+        Very communicative and <b>pleasant to work with, highly motivated</b>{' '}
+        and eager to provide the best possible solution. They respond quickly,
+        have great skills, and vast relevant knowledge. They{' '}
+        <b>provided excellent plans</b> and timelines for a complex project.
+      </>
+    ),
+    author: {
+      name: 'Oren Cohen',
+      role: 'VP of R&D',
+      company: 'ResonAI',
+    },
+  },
+  results: [
+    { label: 'Downloads', value: '10k' },
+    { label: 'Active users', value: '5k' },
+    { label: 'AppStore Rating', value: '4.5' },
+  ],
+}
+
 export const projectsData: ProjectDataType = {
   enclaves,
-  poolex: {
-    socials: [
-      { link: '', type: 'app store' },
-      { link: '', type: 'google play' },
-    ],
-    title: 'Poolex',
-    description:
-      'What could be more incredible than discovering new people, who want to do the same things as you, with you?  ',
-    img: {
-      x1: PoolexImg_main,
-      mobile: PoolexImg_mobile,
-    },
-    slides: {
-      width: 320,
-      items: [
-        PoolexImg_challenges,
-        PoolexSlide1,
-        PoolexSlide2,
-        PoolexSlide3,
-        PoolexSlide4,
-      ],
-    },
-    challengesImg: {
-      src: PoolexImg_challenges,
-      width: 358,
-    },
-    technologies: ['swift', 'swiftUi', 'uiKit', 'kotlin', 'jetpackCompose'],
-    challengesAndSolutions: [
-      {
-        challenge:
-          'Challenge number 1 was very hard, at first we didn’t know how to do it.',
-        solution:
-          'Solution number 1, since we are very professional guys we managed to find solution quickly.',
-      },
-      {
-        challenge:
-          'Challenge number 2 was even more harder, at first we didn’t know how to do it.',
-        solution:
-          'Solution number 2, since we are kapet very professional guys we managed to find solution efficiently.',
-      },
-      {
-        challenge:
-          'Challenge number 3 at first seemed easy, but then turned out very hard.',
-        solution:
-          'Solution number 3, since we are cine stie professional guys we managed to find solution for this too.',
-      },
-    ],
-    projectInfo: {
-      infoTitle: 'App that will boost your activity.',
-      infoDescription: `Enclaves is a personal project of mine that I wanted to get into the world. I envisioned the app back in 2020, and, after many iterations, team meetings, and beta tests, in 2023 I released it to the public. It revolves around walking and conquering territories in your city, competing with other people and discovering new places, and is one of a kind.`,
-      infoItems: [
-        { label: 'Industries', value: 'Fitness' },
-        { label: 'Services', value: 'iOS, Android' },
-        { label: 'Team', value: '1 Android dev, 1 iOS devs, Backend dev' },
-        { label: 'Country', value: 'USA' },
-        { label: 'Year', value: '2021' },
-        { label: 'Duration', value: '6 month' },
-      ],
-    },
-    projectScope: {
-      projectScopeTitle: 'Project scope (this one will be optional)',
-      projectScopeDescription: `A short description, here we will give a sneak pic to intrigue the reader, like we had a super puper had technical problem and we managed to solve it in a blink of an eye.
-      `,
-    },
-    quote: {
-      text: (
-        <>
-          Very communicative and <b>pleasant to work with, highly motivated</b>{' '}
-          and eager to provide the best possible solution. They respond quickly,
-          have great skills, and vast relevant knowledge. They{' '}
-          <b>provided excellent plans</b> and timelines for a complex project.
-        </>
-      ),
-      author: {
-        name: 'Oren Cohen',
-        role: 'VP of R&D',
-        company: 'ResonAI',
-      },
-    },
-    results: [
-      { label: 'Downloads', value: '10k' },
-      { label: 'Active users', value: '5k' },
-      { label: 'AppStore Rating', value: '4.5' },
-    ],
-  },
-  pvolve: {
-    socials: [
-      { link: '', type: 'app store' },
-      { link: '', type: 'google play' },
-    ],
-    title: 'Pvolve',
-    description:
-      'Pvolve is a fitness company with a revolutionary method combining low-impact functional movements with resistance equipment for unbeatable results.',
-    img: {
-      x1: PvolveImg_main,
-      mobile: PvolveImg_mobile,
-    },
-    technologies: ['swift', 'swiftUi', 'uiKit', 'kotlin', 'jetpackCompose'],
-    slides: {
-      width: 300,
-      items: [PvolveImg_challenges, PvolveImg_main, PvolveSlide1, PvolveSlide2],
-    },
-    challengesImg: {
-      src: PvolveImg_challenges,
-      width: 358,
-    },
-    challengesAndSolutions: [
-      {
-        challenge:
-          'Challenge number 1 was very hard, at first we didn’t know how to do it.',
-        solution:
-          'Solution number 1, since we are very professional guys we managed to find solution quickly.',
-      },
-      {
-        challenge:
-          'Challenge number 2 was even more harder, at first we didn’t know how to do it.',
-        solution:
-          'Solution number 2, since we are kapet very professional guys we managed to find solution efficiently.',
-      },
-      {
-        challenge:
-          'Challenge number 3 at first seemed easy, but then turned out very hard.',
-        solution:
-          'Solution number 3, since we are cine stie professional guys we managed to find solution for this too.',
-      },
-    ],
-    projectInfo: {
-      infoTitle: 'App that will boost your activity.',
-      infoDescription: `Enclaves is a personal project of mine that I wanted to get into the world. I envisioned the app back in 2020, and, after many iterations, team meetings, and beta tests, in 2023 I released it to the public. It revolves around walking and conquering territories in your city, competing with other people and discovering new places, and is one of a kind.`,
-      infoItems: [
-        { label: 'Industries', value: 'Fitness' },
-        { label: 'Services', value: 'iOS, Android' },
-        { label: 'Team', value: '1 Android dev, 1 iOS devs, Backend dev' },
-        { label: 'Country', value: 'USA' },
-        { label: 'Year', value: '2021' },
-        { label: 'Duration', value: '6 month' },
-      ],
-    },
-    quote: {
-      text: (
-        <>
-          Very communicative and <b>pleasant to work with, highly motivated</b>{' '}
-          and eager to provide the best possible solution. They respond quickly,
-          have great skills, and vast relevant knowledge. They{' '}
-          <b>provided excellent plans</b> and timelines for a complex project.
-        </>
-      ),
-      author: {
-        name: 'Oren Cohen',
-        role: 'VP of R&D',
-        company: 'ResonAI',
-      },
-    },
-    results: [
-      { label: 'Downloads', value: '10k' },
-      { label: 'Active users', value: '5k' },
-      { label: 'AppStore Rating', value: '4.5' },
-    ],
-  },
+  poolex,
+  pvolve,
   vera,
   wildy,
   testapp: {

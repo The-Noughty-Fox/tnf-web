@@ -4,6 +4,7 @@ import ajinkyaPatil from '../../assets/clients/ajinkya_patil.jpeg';
 import joelRocha from '../../assets/clients/joel_rocha.jpeg';
 import jasonVanBuiten from '../../assets/clients/jason_van_buiten.jpeg';
 import seanFannan from '../../assets/clients/sean_fannan.jpeg';
+import ericGabrieli from '../../assets/clients/eric_gabrieli.jpeg';
 
 export const testimonials = [
   {
@@ -33,6 +34,13 @@ export const testimonials = [
     role: 'CTO',
     company: 'Aplogic',
     thumbnail: ajinkyaPatil,
+  },
+  {
+    text: 'Amazing team, Alex has done a perfect job and we\'ll come to them again in the future for sure.',
+    name: 'Eric Gabrieli',
+    role: 'Founder',
+    company: 'InstantFlow.ai',
+    thumbnail: ericGabrieli
   },
   {
     text: 'Thanks again for the help, it was great!',
