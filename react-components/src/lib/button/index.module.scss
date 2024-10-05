@@ -68,6 +68,11 @@
   @apply bg-woodsmoke-50 text-primary;
 }
 
+.btn--inversed {
+  --btn-highlight-color: #ff760a;
+  @apply bg-primary text-woodsmoke-50;
+}
+
 .btn--dark {
   --btn-highlight-color: #1c1c1c;
   @apply text-woodsmoke-50 bg-woodsmoke-950;

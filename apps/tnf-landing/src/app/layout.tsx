@@ -1,12 +1,11 @@
 import './global.scss';
-import { AppProvider, Button } from '@tnf-workspace/react-components';
+import { AppProvider } from '@tnf-workspace/react-components';
 import Link from 'next/link';
 import {
   screens,
   containerPx,
   containerPxMd,
   containerPxLg,
-  text,
 } from '@tnf-workspace/ts-lib';
 import { Bootstrap } from '../components/bootstrap';
 import { CSSProperties, ReactNode } from 'react';
@@ -55,6 +54,7 @@ const links = [
   { href: pageRoutes.contactUs, name: 'Contact us' },
   { href: pageRoutes.qAndA, name: 'Q & A' },
   { href: pageRoutes.privacyTerms, name: 'Privacy & Terms' },
+  { href: pageRoutes.careers, name: 'Careers' },
 ];
 
 export const metadata = {

@@ -25,6 +25,7 @@ export * from './lib/icons/curly-arrow-4-svg';
 export * from './lib/icons/arrow-up-right-svg';
 export * from './lib/icons/play-market-store-svg';
 export * from './lib/icons/apple-store-svg';
+export * from './lib/icons/caret-right-svg';
 export * from './lib/icons/quote-svg';
 export * from './lib/icons/plus-svg';
 export * from './lib/icons/sign-svg';

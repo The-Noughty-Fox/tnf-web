@@ -7,7 +7,7 @@ type ButtonProps = {
   text: string;
   onClick?: () => void;
   size?: 'small' | 'large';
-  variant?: 'primary' | 'dark' | 'light';
+  variant?: 'primary' | 'dark' | 'light' | 'inversed';
   fluid?: boolean;
   Icon?: ReactElement;
 };
@@ -24,6 +24,7 @@ export const Button = ({
     [styles['btn--small']]: size === 'small',
     [styles['btn--large']]: size === 'large',
     [styles['btn--primary']]: variant === 'primary',
+    [styles['btn--inversed']]: variant === 'inversed',
     [styles['btn--dark']]: variant === 'dark',
     [styles['btn--light']]: variant === 'light',
     [styles['btn--fluid']]: fluid,

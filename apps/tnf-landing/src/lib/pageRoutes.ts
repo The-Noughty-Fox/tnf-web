@@ -8,4 +8,5 @@ export const pageRoutes = {
   qAndA: '/q-and-a',
   blog: process.env.NEXT_PUBLIC_BLOG_PAGE || '',
   privacyTerms: '/privacy-terms',
+  careers: '/careers',
 };

@@ -11,10 +11,6 @@ export const pageRoutes = {
     label: 'Portfolio',
     href: `${import.meta.env.PUBLIC_TNF_DOMAIN}/portfolio`,
   },
-  hui: {
-    label: 'Hui',
-    href: `${import.meta.env.PUBLIC_TNF_DOMAIN}/hui`,
-  },
   qAndA: {
     label: 'Q & A',
     href: `${import.meta.env.PUBLIC_TNF_DOMAIN}/q-and-a`,
@@ -27,9 +23,13 @@ export const pageRoutes = {
     label: 'Services',
     href: `${import.meta.env.PUBLIC_TNF_DOMAIN}/services`,
   },
-  contactUs: {
-    label: 'Contact Us',
+  contacts: {
+    label: 'Contacts',
     href: `${import.meta.env.PUBLIC_TNF_DOMAIN}/contact-us`,
+  },
+  careers: {
+    label: 'Careers',
+    href: `${import.meta.env.PUBLIC_TNF_DOMAIN}/careers`,
   },
   postDetails: {
     label: 'Post Details',

@@ -3,7 +3,6 @@ import { Logo } from './logo';
 import { ClutchSvg } from './icons/clutch-svg';
 import { ListItem } from './list-item';
 import { ReactElement } from 'react';
-import { Button } from './button';
 import { UpworkSvg } from './icons/upwork-svg';
 import { InSvg } from './icons/in-svg';
 import { GithubSvg } from './icons/github-svg';
