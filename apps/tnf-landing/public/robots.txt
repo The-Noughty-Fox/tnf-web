@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /_next/
+Allow: /
+
+Sitemap: https://thenoughtyfox.com/sitemap.xml
