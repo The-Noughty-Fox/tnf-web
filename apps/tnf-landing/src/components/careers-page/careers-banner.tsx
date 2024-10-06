@@ -4,10 +4,12 @@ import { Heading } from '../heading';
 import { Button } from '@tnf-workspace/react-components';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { useCareersContext } from './context';
 
 export const CareersBanner = () => {
   const ref = useRef<HTMLDivElement>(null);
   const bubbleItemsRef = useRef<HTMLElement[]>([]);
+  const { scrollTargets, scrollTo } = useCareersContext();
 
   useEffect(() => {
     gsap.effects.bubbleUp(bubbleItemsRef.current, {
@@ -51,7 +53,12 @@ export const CareersBanner = () => {
             }
           }}
         >
-          <Button text="Open positions" size="small" variant="inversed" />
+          <Button
+            text="Open positions"
+            size="small"
+            variant="inversed"
+            onClick={() => scrollTo(scrollTargets['open-vacancies'])}
+          />
         </div>
       </div>
     </div>

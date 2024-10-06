@@ -41,13 +41,13 @@ export const Gallery = () => {
       >
         <div
           ref={setBubbleUpRef}
-          className="bg-orange-500/25 rounded-1 overflow-hidden md:rounded-3 w-[18.65%]"
+          className="bg-orange-800/10 rounded-1 overflow-hidden md:rounded-3 w-[18.65%]"
         >
           <Image src={Img1} alt="" className="image-cover" />
         </div>
         <div
           ref={setBubbleUpRef}
-          className="bg-orange-500/25 rounded-1 overflow-hidden md:rounded-3 w-[58.97%]"
+          className="bg-orange-800/10 rounded-1 overflow-hidden md:rounded-3 w-[58.97%]"
         >
           <Image
             src={Img2}
@@ -60,7 +60,7 @@ export const Gallery = () => {
         </div>
         <div
           ref={setBubbleUpRef}
-          className="bg-orange-500/25 rounded-1 overflow-hidden md:rounded-3 w-[22.38%]"
+          className="bg-orange-800/10 rounded-1 overflow-hidden md:rounded-3 w-[22.38%]"
         >
           <Image src={Img3} alt="" className="image-cover" />
         </div>
@@ -74,19 +74,19 @@ export const Gallery = () => {
       >
         <div
           ref={setBubbleUpRef}
-          className="bg-orange-500/25 rounded-1 overflow-hidden md:rounded-3 w-[18.65%]"
+          className="bg-orange-800/10 rounded-1 overflow-hidden md:rounded-3 w-[18.65%]"
         >
           <Image src={Img4} alt="" className="image-cover" />
         </div>
         <div
           ref={setBubbleUpRef}
-          className="bg-orange-500/25 rounded-1 overflow-hidden md:rounded-3 w-[22.38%]"
+          className="bg-orange-800/10 rounded-1 overflow-hidden md:rounded-3 w-[22.38%]"
         >
           <Image src={Img5} alt="" className="image-cover" />
         </div>
         <div
           ref={setBubbleUpRef}
-          className="bg-orange-500/25 rounded-1 overflow-hidden md:rounded-3 w-[58.97%]"
+          className="bg-orange-800/10 rounded-1 overflow-hidden md:rounded-3 w-[58.97%]"
         >
           <Image src={Img6} alt="" className="image-cover" />
         </div>

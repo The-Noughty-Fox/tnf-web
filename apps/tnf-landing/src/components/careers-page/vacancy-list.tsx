@@ -4,10 +4,12 @@ import { Vacancy } from './vacancy/vacancy';
 import { careers } from '../../lib/data/careers';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { useCareersContext } from './context';
 
 export const VacancyList = () => {
   const ref = useRef<HTMLDivElement | null>(null);
   const bubbleUpItemsRef = useRef<HTMLElement[]>([]);
+  const { scrollTargets } = useCareersContext();
 
   useEffect(() => {
     gsap.effects.bubbleUp(bubbleUpItemsRef.current, {
@@ -20,14 +22,14 @@ export const VacancyList = () => {
   }, []);
 
   return (
-    <div ref={ref}>
+    <div ref={ref} id={scrollTargets['open-vacancies']}>
       <h2
         ref={(el) => {
           if (el) {
             bubbleUpItemsRef.current.push(el);
           }
         }}
-        className="text-accent-small uppercase text-center mb-12"
+        className="text-accent-small text-[45px] uppercase text-center mb-6 md:mb-12"
       >
         Open positions
       </h2>

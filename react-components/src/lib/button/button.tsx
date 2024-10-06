@@ -10,6 +10,7 @@ type ButtonProps = {
   variant?: 'primary' | 'dark' | 'light' | 'inversed';
   fluid?: boolean;
   Icon?: ReactElement;
+  className?: string;
 };
 
 export const Button = ({
@@ -19,16 +20,21 @@ export const Button = ({
   variant = 'primary',
   fluid,
   Icon,
+  className,
 }: ButtonProps) => {
-  const btnClsx = clsx(styles.btn, {
-    [styles['btn--small']]: size === 'small',
-    [styles['btn--large']]: size === 'large',
-    [styles['btn--primary']]: variant === 'primary',
-    [styles['btn--inversed']]: variant === 'inversed',
-    [styles['btn--dark']]: variant === 'dark',
-    [styles['btn--light']]: variant === 'light',
-    [styles['btn--fluid']]: fluid,
-  });
+  const btnClsx = clsx(
+    styles.btn,
+    {
+      [styles['btn--small']]: size === 'small',
+      [styles['btn--large']]: size === 'large',
+      [styles['btn--primary']]: variant === 'primary',
+      [styles['btn--inversed']]: variant === 'inversed',
+      [styles['btn--dark']]: variant === 'dark',
+      [styles['btn--light']]: variant === 'light',
+      [styles['btn--fluid']]: fluid,
+    },
+    className
+  );
   const ref = useRef<HTMLDivElement | null>(null);
 
   return (

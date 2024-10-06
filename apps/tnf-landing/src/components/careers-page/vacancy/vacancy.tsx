@@ -1,6 +1,10 @@
 'use client';
 
-import { CaretRightSvg } from '@tnf-workspace/react-components';
+import {
+  ArrowUpRightSvg,
+  Button,
+  CaretRightSvg,
+} from '@tnf-workspace/react-components';
 import { useEffect, useRef, useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import styles from './index.module.scss';
@@ -92,21 +96,23 @@ export const Vacancy = ({
       >
         <div className="flex-1 text-[18px] md:text-[20px] font-bold">
           <div className="flex gap-4">
-            <div className="w-[98px] h-[98px] rounded-3">
+            <div className="w-[98px] h-[98px] rounded-3 hidden md:block">
               <Image src={image} alt="" />
             </div>
-            <div className="flex flex-col justify-center gap-4">
+            <div className="flex flex-col justify-center md:gap-4">
               <div className="text-h5">iOS Developer</div>
               <div className="text-body font-normal">{tags.join(' / ')}</div>
             </div>
           </div>
         </div>
         <CaretRightSvg
-          className={`${styles.icon} ${isOpened ? '-rotate-90' : 'rotate-0'}`}
+          className={`text-primary ${styles.icon} ${
+            isOpened ? '-rotate-90' : 'rotate-0'
+          }`}
         />
       </h3>
       <div className={`${styles['panel-body']} ${isOpened ? 'h-auto' : 'h-0'}`}>
-        <div className="mt-5 flex flex-col lg:flex-row gap-12 justify-start">
+        <div className="mt-12 flex flex-col lg:flex-row gap-12 justify-start">
           <div>
             <div
               className="text-h3 font-medium"
@@ -124,7 +130,7 @@ export const Vacancy = ({
                   <div className="whitespace-nowrap text-h4 leading-1 text-primary">
                     {title}
                   </div>
-                  <div className="text-h6 mt-6 leading-1">{value}</div>
+                  <div className="text-h6 mt-2 md:mt-6 leading-1">{value}</div>
                 </div>
               ))}
             </div>
@@ -144,6 +150,17 @@ export const Vacancy = ({
             </ul>
           </div>
         ))}
+
+        <div className="flex justify-center md:justify-start mt-12 md:mt-16">
+          <div>
+            <Button
+              variant="inversed"
+              text="Apply for the job"
+              Icon={<ArrowUpRightSvg />}
+              size="small"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
