@@ -10,6 +10,10 @@ import { ServicesStats } from '../../components/services-page/services-stats';
 import { ServicesProsAndCons } from '../../components/services-page/services-pros-and-cons';
 import { testimonials } from '../../lib/data/testimonials';
 
+export const metadata = {
+  title: 'TNF | iOS Development',
+};
+
 export default function Index() {
   return (
     <div className="mb-80p*200p">

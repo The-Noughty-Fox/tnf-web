@@ -59,6 +59,11 @@ const links = [
 
 export const metadata = {
   title: 'TNF - Smart Solutions, Foxy Style',
+  description:
+    'The Noughty Fox offers top-tier mobile and web development services, delivering innovative solutions for businesses of all sizes.',
+  keywords:
+    'mobile development, custom app development, innovative mobile solutions, complex projects, advanced web development, mobile app consultancy, high-quality development services, app development consultancy, The Noughty Fox, enterprise app development, tailored web solutions, expert mobile consultancy, mobile and web services, digital solutions',
+  robots: 'index, follow',
   icons: {
     icon: '/favicon.ico',
     apple: '/apple-icon.png',

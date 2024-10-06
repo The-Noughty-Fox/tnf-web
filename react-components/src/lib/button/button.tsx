@@ -42,7 +42,7 @@ export const Button = ({
       <span className={styles['btn__ripple']}>
         <span></span>
       </span>
-      <div className="overflow-hidden flex items-center gap-2">
+      <div className="overflow-hidden flex justify-center items-center gap-2">
         <div ref={ref} data-text={text} className={styles['btn__text']}>
           {text}
         </div>
