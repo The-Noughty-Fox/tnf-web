@@ -56,6 +56,8 @@ export const careers = {
           ],
         },
       ],
+      applicationUrl:
+        'https://airtable.com/appwCNmdlYLUzKCTk/shr9351NZHQSnQ5rL',
     },
   ],
 };

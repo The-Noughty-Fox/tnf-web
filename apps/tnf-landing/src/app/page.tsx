@@ -24,7 +24,7 @@ export default function Index() {
       <section className="mt-80p*200p">
         <PingUs />
       </section>
-      <section className="mt-80p*200p">
+      <section className="mt-80p*200p" id="our-approach">
         <OurApproach />
       </section>
       <section

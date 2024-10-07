@@ -33,7 +33,7 @@ export const CareersProvider = ({ children }: PropsWithChildren) => {
       scrollTargets,
       scrollTo,
     }),
-    []
+    [scrollTo]
   );
   return (
     <CareersContext.Provider value={contextValue}>

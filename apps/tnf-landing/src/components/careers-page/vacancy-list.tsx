@@ -33,25 +33,28 @@ export const VacancyList = () => {
       >
         Open positions
       </h2>
-      {careers.vacancies.map((vacancy, index) => (
-        <div
-          key={index}
-          ref={(el) => {
-            if (el) {
-              bubbleUpItemsRef.current.push(el);
-            }
-          }}
-        >
-          <Vacancy
-            title={vacancy.title}
-            tags={vacancy.tags}
-            image={vacancy.image}
-            weAreLookingFor={vacancy.weAreLookingFor}
-            jobProperties={vacancy.jobProperties}
-            lists={vacancy.lists}
-          />
-        </div>
-      ))}
+      <div className="flex flex-col gap-6 md:gap-12">
+        {careers.vacancies.map((vacancy, index) => (
+          <div
+            key={index}
+            ref={(el) => {
+              if (el) {
+                bubbleUpItemsRef.current.push(el);
+              }
+            }}
+          >
+            <Vacancy
+              title={vacancy.title}
+              tags={vacancy.tags}
+              image={vacancy.image}
+              weAreLookingFor={vacancy.weAreLookingFor}
+              jobProperties={vacancy.jobProperties}
+              lists={vacancy.lists}
+              applicationUrl={vacancy.applicationUrl}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

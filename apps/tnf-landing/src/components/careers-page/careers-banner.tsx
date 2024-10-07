@@ -5,11 +5,14 @@ import { Button } from '@tnf-workspace/react-components';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { useCareersContext } from './context';
+import { useRouter } from 'next/navigation';
+import { pageRoutes } from '../../lib/pageRoutes';
 
 export const CareersBanner = () => {
   const ref = useRef<HTMLDivElement>(null);
   const bubbleItemsRef = useRef<HTMLElement[]>([]);
   const { scrollTargets, scrollTo } = useCareersContext();
+  const router = useRouter();
 
   useEffect(() => {
     gsap.effects.bubbleUp(bubbleItemsRef.current, {
@@ -44,7 +47,14 @@ export const CareersBanner = () => {
             }
           }}
         >
-          <Button text="More about us" size="small" variant="primary" />
+          <Button
+            text="More about us"
+            size="small"
+            variant="primary"
+            onClick={() => {
+              router.push(`${pageRoutes.home}#our-approach`);
+            }}
+          />
         </div>
         <div
           ref={(el) => {

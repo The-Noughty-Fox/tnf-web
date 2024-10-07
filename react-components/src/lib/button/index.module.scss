@@ -70,7 +70,7 @@
 
 .btn--inversed {
   --btn-highlight-color: #ff760a;
-  @apply bg-primary text-woodsmoke-50;
+  @apply bg-primary outline outline-1 outline-primary text-white;
 }
 
 .btn--dark {

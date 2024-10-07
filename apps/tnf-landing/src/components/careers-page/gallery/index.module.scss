@@ -1,0 +1,10 @@
+.row {
+  @apply relative flex;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-bottom: calc((431 / 1300) * 100%);
+  }
+}
