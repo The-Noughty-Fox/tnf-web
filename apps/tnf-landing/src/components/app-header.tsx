@@ -13,6 +13,7 @@ export const AppHeader = () => {
       links={[
         { name: 'Services', href: pageRoutes.services },
         { name: 'Portfolio', href: pageRoutes.portfolio },
+        { name: 'Careers', href: pageRoutes.careers },
         { name: 'Contact us', href: pageRoutes.contactUs },
         { name: 'Blog', href: process.env.NEXT_PUBLIC_BLOG_PAGE || '' },
       ]}

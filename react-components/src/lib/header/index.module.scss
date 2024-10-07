@@ -22,7 +22,7 @@
 }
 
 .ul {
-  @apply px-15 lg:px-0 mt-[150px] ml-auto lg:mt-0 flex flex-col lg:items-center lg:flex-row gap-10;
+  @apply px-15 lg:px-0 mt-[150px] ml-auto lg:mt-0 flex flex-col lg:items-center lg:flex-row gap-4 md:gap-10;
 }
 
 .li {
