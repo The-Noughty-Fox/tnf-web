@@ -434,7 +434,69 @@ const pvolve: ProjectDataItemType = {
   challengesAndSolutions: [
     {
       challenge: '<em>COMPLEXITY</em><br>It was a complex project integrating multiple services and APIs',
-      solution: '<em>BREAKDOWN</em><br>We broke down the project into smaller parts, and slowly learn the whole project',
+      solution: '<em>BREAKDOWN</em><br>We broke down the project into its consituents, and slowly tackled each service one by one',
+    },
+    {
+      challenge: '<em>LAMBDA</em><br>Using AWS Lambda for the first time was a challenge',
+      solution: '<em>TRAINING</em><br>We took a course on AWS Lambda and worked closely with the backend dev to make sure we are doing everything right',
+    }
+  ],
+  projectInfo: {
+    infoTitle: 'Update CX and the platform',
+    infoDescription: `Pvolve is a fitness company with a revolutionary method combining low-impact functional movements with resistance equipment for unbeatable results.<br><br>They wanted to update their platform and improve the customer experience.`,
+    infoItems: [
+      { label: 'Industries', value: 'Fitness' },
+      { label: 'Services', value: 'Web' },
+      { label: 'Team', value: 'Full-Stack Dev' },
+      { label: 'Country', value: 'USA' },
+      { label: 'Year', value: '2024' },
+      { label: 'Duration', value: '6 months' },
+    ],
+  },
+  quote: {
+    text: '',
+    author: {
+      name: '',
+      role: '',
+      company: '',
+    },
+  },
+  results: [],
+}
+
+const testapp: ProjectDataItemType = {
+  socials: [
+    { link: 'https://apps.apple.com/md/app/testapp-io/id1518972541', type: 'app store' },
+    { link: 'https://play.google.com/store/apps/details?id=testapp.io&hl=en', type: 'google play' },
+    { link: 'https://www.testapp.io', type: 'personal' },
+  ],
+  title: 'TestApp.io',
+  description: 'Effortless Distribution & Game-changing Feedback',
+  img: {
+    x1: WildyImg_main,
+    mobile: WildyImg_mobile,
+  },
+  technologies: ['swift', 'uiKit', 'swiftUi'],
+  slides: {
+    width: 320,
+    items: [
+      TestAppImg_challenges,
+      TestAppSlide1,
+      TestAppSlide2,
+      TestAppSlide3,
+      TestAppSlide4,
+    ],
+  },
+  challengesImg: {
+    src: TestAppImg_challenges,
+    width: 358,
+  },
+  challengesAndSolutions: [
+    {
+      challenge:
+        'Challenge number 1 was very hard, at first we didn’t know how to do it.',
+      solution:
+        'Solution number 1, since we are very professional guys we managed to find solution quickly.',
     },
     {
       challenge:
@@ -450,15 +512,15 @@ const pvolve: ProjectDataItemType = {
     },
   ],
   projectInfo: {
-    infoTitle: 'App that will boost your activity.',
-    infoDescription: `Enclaves is a personal project of mine that I wanted to get into the world. I envisioned the app back in 2020, and, after many iterations, team meetings, and beta tests, in 2023 I released it to the public. It revolves around walking and conquering territories in your city, competing with other people and discovering new places, and is one of a kind.`,
+    infoTitle: 'SDK for gathering QA feedback',
+    infoDescription: `TestApp.io is a library for gathering QA feedback from your users. It allows you to distribute your app to a selected group of users, and gather feedback from them in a structured way.<br><br>It’s a great tool for developers who want to improve their apps based on real user feedback.`,
     infoItems: [
-      { label: 'Industries', value: 'Fitness' },
-      { label: 'Services', value: 'iOS, Android' },
-      { label: 'Team', value: '1 Android dev, 1 iOS devs, Backend dev' },
-      { label: 'Country', value: 'USA' },
-      { label: 'Year', value: '2021' },
-      { label: 'Duration', value: '6 month' },
+      { label: 'Industries', value: 'Productivity' },
+      { label: 'Services', value: 'iOS' },
+      { label: 'Team', value: 'iOS' },
+      { label: 'Country', value: 'UAE' },
+      { label: 'Year', value: '2022' },
+      { label: 'Duration', value: '9 months' },
     ],
   },
   quote: {
@@ -489,83 +551,5 @@ export const projectsData: ProjectDataType = {
   pvolve,
   vera,
   wildy,
-  testapp: {
-    socials: [
-      { link: '', type: 'app store' },
-      { link: '', type: 'google play' },
-    ],
-    title: 'TestApp',
-    description: 'Effortless distribution Game-changing feedback',
-    img: {
-      x1: WildyImg_main,
-      mobile: WildyImg_mobile,
-    },
-    technologies: ['swift', 'swiftUi', 'uiKit', 'kotlin', 'jetpackCompose'],
-    slides: {
-      width: 320,
-      items: [
-        TestAppImg_challenges,
-        TestAppSlide1,
-        TestAppSlide2,
-        TestAppSlide3,
-        TestAppSlide4,
-      ],
-    },
-    challengesImg: {
-      src: TestAppImg_challenges,
-      width: 358,
-    },
-    challengesAndSolutions: [
-      {
-        challenge:
-          'Challenge number 1 was very hard, at first we didn’t know how to do it.',
-        solution:
-          'Solution number 1, since we are very professional guys we managed to find solution quickly.',
-      },
-      {
-        challenge:
-          'Challenge number 2 was even more harder, at first we didn’t know how to do it.',
-        solution:
-          'Solution number 2, since we are kapet very professional guys we managed to find solution efficiently.',
-      },
-      {
-        challenge:
-          'Challenge number 3 at first seemed easy, but then turned out very hard.',
-        solution:
-          'Solution number 3, since we are cine stie professional guys we managed to find solution for this too.',
-      },
-    ],
-    projectInfo: {
-      infoTitle: 'App that will boost your activity.',
-      infoDescription: `Enclaves is a personal project of mine that I wanted to get into the world. I envisioned the app back in 2020, and, after many iterations, team meetings, and beta tests, in 2023 I released it to the public. It revolves around walking and conquering territories in your city, competing with other people and discovering new places, and is one of a kind.`,
-      infoItems: [
-        { label: 'Industries', value: 'Fitness' },
-        { label: 'Services', value: 'iOS, Android' },
-        { label: 'Team', value: '1 Android dev, 1 iOS devs, Backend dev' },
-        { label: 'Country', value: 'USA' },
-        { label: 'Year', value: '2021' },
-        { label: 'Duration', value: '6 month' },
-      ],
-    },
-    quote: {
-      text: (
-        <>
-          Very communicative and <b>pleasant to work with, highly motivated</b>{' '}
-          and eager to provide the best possible solution. They respond quickly,
-          have great skills, and vast relevant knowledge. They{' '}
-          <b>provided excellent plans</b> and timelines for a complex project.
-        </>
-      ),
-      author: {
-        name: 'Oren Cohen',
-        role: 'VP of R&D',
-        company: 'ResonAI',
-      },
-    },
-    results: [
-      { label: 'Downloads', value: '10k' },
-      { label: 'Active users', value: '5k' },
-      { label: 'AppStore Rating', value: '4.5' },
-    ],
-  },
+  testapp,
 };

@@ -216,7 +216,7 @@ export const projectCards: ProjectCardType[] = [
     ),
     title: 'Pvolve',
     description:
-      'Fitness through low-impact functional movements and resistance equipment.',
+      'Fitness through low-impact functional movements and resistance equipment',
     domains: ['Fitness'],
     cta: {
       text: 'View case study',
@@ -256,7 +256,7 @@ export const projectCards: ProjectCardType[] = [
       />
     ),
     title: 'TestApp',
-    description: 'Effortless distribution game-changing feedback',
+    description: 'Effortless Distribution & Game-changing Feedback',
     domains: ['Productivity'],
     cta: {
       text: 'View case study',
