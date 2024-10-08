@@ -102,7 +102,7 @@ export const Vacancy = ({
               <Image src={image} alt="" />
             </div>
             <div className="flex flex-col justify-center md:gap-4">
-              <div className="text-h5">iOS Developer</div>
+              <div className="text-h5">{title}</div>
               <div className="text-body font-normal">{tags.join(' / ')}</div>
             </div>
           </div>

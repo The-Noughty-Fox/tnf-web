@@ -4,11 +4,11 @@ export const careers = {
   vacancies: [
     {
       image: Img,
-      title: 'iOS Developer',
-      tags: ['Engineering', 'Fulltime', 'Remote'],
+      title: 'React Native Engineer',
+      tags: ['Mobile', 'Full-time', 'Hybrid'],
       weAreLookingFor: {
-        title: 'Few words about the job and responsibilities',
-        body: 'We’re looking for a talented Fullstack Software Engineer to help us build high-quality features across the platform: HTTPie Cloud, HTTPie for Web & Desktop, HTTPie for Terminal, our docs/website, etc.',
+        title: 'Role Description',
+        body: 'After being fully Native for 2.5 years, we are now targeting the React Native platform. We have very experienced Native and React developers, and we need someone to bridge those worlds.',
       },
       jobProperties: [
         {
@@ -17,42 +17,54 @@ export const careers = {
         },
         {
           title: 'Job Type',
-          value: 'Full time',
+          value: 'Full-time',
         },
         {
           title: 'Department',
-          value: 'Engineering',
+          value: 'Mobile',
         },
         {
           title: 'Work format',
-          value: 'Remote',
+          value: 'Hybrid',
         },
       ],
       lists: [
         {
-          title:
-            'Here we will describe what are we looking for in the potential candidate',
+          title: 'Responsibilities',
           items: [
-            'At least 5 years of software engineering and Python experience',
-            'Demonstrated ability to lead the development of an open-source project',
-            'Excellent English and technical writing skills',
-            'Solid understanding of HTTP and modern APIs',
-            'Passion for developer tools and sense for what makes them amazing',
-            'Passion for simplicity and delightful user experience',
-            'Good sense for when to choose a robust vs. minimal solution to move fast',
-            'Ability to comfortably navigate the ladder of abstraction',
-            'Eagerness to learn and share',
+            'Developing complex UI using the React Native stack',
+            'Close collaboration with our designer and the rest of the mobile team to provide seamless UX',
+            'Direct collaboration with the client where needed',
+            'Constant GROWTH and a hunger to learn like the rest of our team'
           ],
         },
         {
-          title:
-            'Off course here we should mention perks and benefits we offer\n',
+          title: 'Qualifications',
           items: [
-            'Flexible working hours',
-            'Hybrid work schedule',
+            '3+ years of React Native experience',
+            'Good knowledge of Expo and React Native CLI',
+            'Good understanding of mobile UI layout and components',
+            'Understanding of REST APIs and integrating them into the app',
+            'Solid level of English',
+          ],
+        },
+        {
+          title: 'Bonus skills',
+          items: [
+            'Understanding of ARKit/ARCore and/or React Native analogies',
+            'Understanding of MLKit/Vision/CoreML and integrations with React Native',
+            'Wrapping Native modules in a React Native interface',
+          ],
+        },
+        {
+          title: 'What we offer',
+          items: [
+            'Mobile projects that you won\'t find anywhere else on the Moldovan market',
+            'A very strong Native team to help you grow and improve',
             'Competitive salary',
-            'Young and talented team',
-            'Office in city center',
+            'Office in the city center',
+            'Hybrid work schedule',
+            'Flexible working hours',
           ],
         },
       ],
