@@ -43,7 +43,7 @@ const items = [
   {
     img: TeamMember5,
     name: 'Daria Slivca',
-    role: 'UI/UX Designer',
+    role: 'UX/UI Designer',
   },
   {
     img: TeamMember6,
