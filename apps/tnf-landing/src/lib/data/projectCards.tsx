@@ -1,18 +1,21 @@
 import EnclavesImg_main from '../../assets/portfolio/enclaves/enclaves_main.webp';
-import EnclavesImg_mobile from '../../assets/portfolio/enclaves/enclaves_mobile.jpg';
+import EnclavesImg_mobile from '../../assets/portfolio/enclaves/enclaves_mobile.webp';
 import WildyImgBg from '../../assets/portfolio/wildy/portfolio_wildy_bg.webp';
 import WildyImg_main from '../../assets/portfolio/wildy/wildy_main.webp';
-import WildyImg_mobile from '../../assets/portfolio/wildy/wildy_mobile.jpg';
+import WildyImg_mobile from '../../assets/portfolio/wildy/wildy_mobile.webp';
 import VeraImg_main from '../../assets/portfolio/vera/vera_main.webp';
-import VeraImg_mobile from '../../assets/portfolio/vera/vera_mobile.jpg';
+import VeraImg_mobile from '../../assets/portfolio/vera/vera_mobile.webp';
 import PoolexImg_main from '../../assets/portfolio/poolex/poolex_main.webp';
-import PoolexImg_mobile from '../../assets/portfolio/poolex/poolex_mobile.jpg';
+import PoolexImg_mobile from '../../assets/portfolio/poolex/poolex_mobile.webp';
 import PvolveImg_main from '../../assets/portfolio/pvolve/pvolve_main.webp';
 import PvolveImg_mobile from '../../assets/portfolio/pvolve/pvolve_mobile.jpg';
 import PvolveImg_bg from '../../assets/portfolio/pvolve/pvolve_bg.png';
 import TestAppImg_main from '../../assets/portfolio/testapp/testapp_main.jpg';
 import TestAppImg_title from '../../assets/portfolio/testapp/testapp_title.png';
-import TestAppImg_mobile from '../../assets/portfolio/testapp/testapp_mobile.jpg';
+import TestAppImg_mobile from '../../assets/portfolio/testapp/testapp_mobile.webp';
+import SecretMessagesImg_main from '../../assets/portfolio/secretmessages/secretmessages_main.png';
+// import TestAppImg_title from '../../assets/portfolio/testapp/testapp_title.png';
+import SecretMessagesImg_mobile from '../../assets/portfolio/secretmessages/secretmessages_mobile.webp';
 import EnclavesImg_title from '../../assets/clients/enclaves.png';
 import PvolveImg_title from '../../assets/clients/pvolve.png';
 import PoolexImg_title from '../../assets/clients/poolex.png';
@@ -264,6 +267,46 @@ export const projectCards: ProjectCardType[] = [
     },
     twTheme: {
       twDomainIndicatorColor: 'bg-white',
+      twTextColor: 'text-white',
+      twCtaTextColor: 'text-woodsmoke-950',
+      twDomainTextColor: 'text-white',
+    },
+    platform: ['web', 'ios'],
+  },
+  {
+    key: 'secretmessages',
+    img: {
+      desktop: {
+        img: SecretMessagesImg_main,
+        twWidth: clampValue({ minSize: 150, maxSize: 525 }),
+      },
+      mobile: SecretMessagesImg_mobile,
+    },
+    background: {
+      twColor: 'bg-[#003566]',
+    },
+    link: pageRoutes.projectDetails('secretmessages'),
+    TitleLogo: (
+      <NextImage
+        style={{
+          width: clampValue({
+            minSize: 140,
+            maxSize: 288,
+          }),
+        }}
+        src={TestAppImg_title}
+        alt="TestApp project logo"
+      />
+    ),
+    title: 'Secret Messages',
+    description: 'Chat with anyone around you without an Internet connection',
+    domains: ['Chat', 'Social'],
+    cta: {
+      text: 'View case study',
+      link: '#',
+    },
+    twTheme: {
+      twDomainIndicatorColor: 'bg-indigooo',
       twTextColor: 'text-white',
       twCtaTextColor: 'text-woodsmoke-950',
       twDomainTextColor: 'text-white',

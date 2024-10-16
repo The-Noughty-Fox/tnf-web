@@ -9,6 +9,7 @@ export const projects = [
   'poolex',
   'pvolve',
   'testapp',
+  'secretmessages'
 ] as const;
 
 export type ProjectCardProps = {

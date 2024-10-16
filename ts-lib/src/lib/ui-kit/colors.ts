@@ -34,8 +34,6 @@ const deepBlue = '#00275E';
 
 const oceanBlue = '#1B0B47';
 
-const xxx = 'red';
-
 export const colors = {
   woodsmoke,
   orange,
@@ -48,5 +46,4 @@ export const colors = {
   primary: orange[600],
   'current-color': 'currentColor',
   transparent: 'transparent',
-  xxx,
 };

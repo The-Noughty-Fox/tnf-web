@@ -545,6 +545,79 @@ const testapp: ProjectDataItemType = {
   ],
 }
 
+const secretMessages: ProjectDataItemType = {
+  socials: [
+    { link: '', type: 'app store' },
+    { link: '', type: 'google play' },
+    { link: 'https://www.figma.com/proto/s0BituE0rsnG35cn5dWzYj/Secret-Messages?page-id=0%3A1&node-id=77-4766&node-type=frame&viewport=484%2C296%2C0.16&t=HBCaAZAU9D9D6BBj-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=77%3A4766', type: 'figma' }
+  ],
+  title: 'Secret Messages',
+  description: 'Chat with anyone around you without an Internet connection',
+  img: {
+    x1: VeraImg_main,
+    mobile: VeraMobile,
+  },
+  technologies: ['swift', 'kotlin', 'arKit', 'arCore', 'gRPC'],
+  slides: {
+    width: 330,
+    items: [VeraImg_challenges, VeraSlide1, VeraSlide2, VeraSlide3],
+  },
+  challengesImg: {
+    src: VeraImg_challenges,
+    width: 358,
+  },
+  challengesAndSolutions: [
+    {
+      challenge: '<em>PERFORMANCE</em><br>Performance was a big challenge. Running ARKit in 60fps, rendering and communicating with a webview, and processing each frame on-device is very resource-heavy.',
+      solution: '<em>METAL</em><br>We ended up using Metal for rendering, and after off-loading many operations on background threads, we managed to get from 13fps to 60fps.',
+    },
+    {
+      challenge: '<em>RENDER SYNC</em><br>Syncing the ARKit (camera) frames with the webview frames was a challenge as we wanted the content to move in sync with the world.',
+      solution: '<em>FRAME SYNC</em><br>We implemented a custom frame sync mechanism that would not render the ARKit frame until webview wouldn\'t finalize it\'s pipeline, and it worked like a charm.',
+    },
+    {
+      challenge: '<em>ASYNC STATE MANAGEMENT</em><br>Managing the state of the ARKit, webview, GRPC connection, many background services, and the UI was a major challenge.',
+      solution: '<em>THE MALL</em><br>We ended up implementing a custom asynchronous architecture called \'The Mall\' on top of Combine and Coroutines that would fully manage all the state of the app.',
+    },
+    {
+      challenge: '<em>SDK</em><br>Creating an SDK that would allow other developers to create their own experiences on top of Vera was a challenge.',
+      solution: '<em>THE MALL</em><br>We ended up building Native iOS and Android SDKs, and a React Native wrapper on top, along with web SDKs.',
+    },
+  ],
+  projectInfo: {
+    infoTitle: 'AI and AR-powered Digital Twins',
+    infoDescription: `Vera transforms buildings into intelligent digital twins with embedded AI and real-time data, creating environments where people and devices operate seamlessly.<br><br>Vera enables context-aware applications for efficient operations and personalized, engaging experiences in office buildings, retail stores, healthcare facilities and much more.`,
+    infoItems: [
+      { label: 'Industries', value: 'Indoor Navigation<br>Building Management' },
+      { label: 'Services', value: 'iOS<br>Android' },
+      { label: 'Team', value: '1 Android<br>1 iOS' },
+      { label: 'Country', value: 'Israel' },
+      { label: 'Year', value: '2022' },
+      { label: 'Duration', value: '2.5 years' },
+    ],
+  },
+  quote: {
+    text: (
+      <>
+        Very communicative and <b>pleasant to work with, highly motivated</b>{' '}
+        and eager to provide the best possible solution. They respond quickly,
+        have great skills, and vast relevant knowledge. They{' '}
+        <b>provided excellent plans</b> and timelines for a complex project.
+      </>
+    ),
+    author: {
+      name: 'Oren Cohen',
+      role: 'VP of R&D',
+      company: 'ResonAI',
+    },
+  },
+  results: [
+    { label: 'Performance', value: '60fps' },
+    { label: 'Business Clients', value: '13' },
+    { label: 'Trips to HQ', value: '8' },
+  ],
+}
+
 export const projectsData: ProjectDataType = {
   enclaves,
   poolex,
@@ -552,4 +625,5 @@ export const projectsData: ProjectDataType = {
   vera,
   wildy,
   testapp,
+  secretmessages: secretMessages,
 };
