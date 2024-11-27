@@ -243,7 +243,7 @@ export const projectCards: ProjectCardType[] = [
       mobile: TestAppImg_mobile,
     },
     background: {
-      twColor: 'bg-ocean-blue',
+      twColor: 'bg-indigo',
     },
     link: pageRoutes.projectDetails('testapp'),
     TitleLogo: (

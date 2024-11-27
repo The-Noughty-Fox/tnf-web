@@ -10,7 +10,7 @@
     "blog:build": "npm run ts-lib:build && nx build tnf-blog",
     "blog:preview": "nx preview tnf-blog",
     "ts-lib:build": "nx build ts-lib",
-    "build": "nx run-many --target=build --all"
+    "build": "npm run ts-lib:build && nx run-many --target=build --projects=tnf-blog"
   },
   "private": true,
   "dependencies": {

@@ -43,6 +43,7 @@ export const colors = {
   'ocean-blue': oceanBlue,
   white: '#ffffff',
   black: '#000000',
+  indigo: '#4B0082',
   primary: orange[600],
   'current-color': 'currentColor',
   transparent: 'transparent',
