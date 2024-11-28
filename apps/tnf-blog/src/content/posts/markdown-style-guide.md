@@ -2,12 +2,8 @@
 cover: 'https://images.unsplash.com/photo-1719209618812-a11aea8d1a32?q=80&w=2908&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 title: 'Markdown Style Guide'
 subTitle: 'What Elon Musk and Jeff Bezos aren’t telling'
-pubDate: 'Jul 01 2022'
-author: {
-    name: 'John Doe',
-    avatar: '/posts-placeholder-1.jpg',
-    role: 'CTO and Co-founcder @ TNF'
-}
+pubDate: '2022-Jul-01'
+author: { name: 'John Doe', avatar: '/posts-placeholder-1.jpg', role: 'CTO and Co-founcder @ TNF' }
 ---
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
@@ -44,7 +40,7 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
 
 ### Output
 
-[//]: # (![blog placeholder]&#40;/blog-placeholder-about.jpg&#41;)
+[//]: # '![blog placeholder](/blog-placeholder-about.jpg)'
 
 ## Blockquotes
 
@@ -104,7 +100,7 @@ we can use 3 backticks ``` in new line and write snippet and close with 3 backti
 
 ````markdown
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -120,7 +116,7 @@ we can use 3 backticks ``` in new line and write snippet and close with 3 backti
 ### Output
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />

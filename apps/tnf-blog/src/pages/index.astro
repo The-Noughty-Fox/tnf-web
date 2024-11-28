@@ -6,7 +6,7 @@ import Container from "../layouts/Container.astro";
 import { pageRoutes } from '../lib/pageRoutes';
 
 const posts = (await getCollection('posts')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+	(a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
 );
 ---
 
