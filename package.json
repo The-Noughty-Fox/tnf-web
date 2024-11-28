@@ -4,13 +4,13 @@
   "license": "MIT",
   "scripts": {
     "landing:start": "nx dev tnf-landing",
-    "landing:build": "nx build tnf-landing",
+    "landing:build": "npm run ts-lib:build && nx run-many --target=build --projects=tnf-landing",
     "landing:preview": "nx start tnf-landing",
     "blog:start": "nx dev tnf-blog",
-    "blog:build": "npm run ts-lib:build && nx build tnf-blog",
+    "blog:build": "npm run ts-lib:build && nx run-many --target=build --projects=tnf-blog",
     "blog:preview": "nx preview tnf-blog",
     "ts-lib:build": "nx build ts-lib",
-    "build": "npm run ts-lib:build && nx run-many --target=build --projects=tnf-blog"
+    "build": "npm run ts-lib:build && nx run-many --target=build --projects=tnf-blog,tnf-landing"
   },
   "private": true,
   "dependencies": {
