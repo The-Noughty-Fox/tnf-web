@@ -1,7 +1,6 @@
 'use client';
 import Swiper from 'swiper';
-import { Mousewheel, Pagination } from 'swiper/modules';
-import { debounce } from '@tnf-workspace/ts-lib';
+import { Mousewheel, Pagination, FreeMode } from 'swiper/modules';
 import clsx from 'clsx';
 import {
   Children,
@@ -34,8 +33,9 @@ export const Slider = ({
         spaceBetween: 32,
         direction: 'horizontal',
         mousewheel: {
-          enabled: true,
           forceToAxis: true,
+          sensitivity: 0.01,
+          thresholdDelta: 10,
         },
         watchSlidesProgress: true,
         pagination: {
@@ -44,7 +44,17 @@ export const Slider = ({
           el: paginationRef.current,
           clickable: true,
         },
-        modules: [Pagination, Mousewheel],
+        freeMode: {
+          enabled: true,
+          momentum: true,
+          momentumRatio: 1,
+          momentumVelocityRatio: 1,
+          momentumBounce: false,
+        },
+        modules: [Pagination, Mousewheel, FreeMode],
+        resistance: false,
+        cssMode: true,
+        preventInteractionOnTransition: false,
       });
     }
   }, []);

@@ -26,23 +26,23 @@ export const Slider = ({ posts, className }: SliderProps) => {
           href={pageRoutes.postDetails.href(post.slug)}
           className="inline-block max-w-[322px]"
         >
-          <div class="aspect-video w-full">
-            <img src={post.cover} class="w-full h-full object-cover" />
+          <div className="aspect-video w-full">
+            <img src={post.cover} className="w-full h-full object-cover" />
           </div>
-          <div class="mt-5 flex items-center">
-            <div class="w-[30px] h-[30px] rounded-full overflow-hidden">
+          <div className="mt-5 flex items-center">
+            <div className="w-[30px] h-[30px] rounded-full overflow-hidden">
               <img
                 src={post.author.avatar}
-                class="w-full h-full object-cover"
+                className="w-full h-full object-cover"
               />
             </div>
-            <div class="ml-2 text-[14px] leading-1">{post.author.name}</div>
-            <div class="ml-auto text-[14px] leading-1">
+            <div className="ml-2 text-[14px] leading-1">{post.author.name}</div>
+            <div className="ml-auto text-[14px] leading-1">
               {getFormattedDate(post.pubDate)}
             </div>
           </div>
-          <h4 class="title mt-4 text-h6 line-clamp-2">{post.title}</h4>
-          <div class="italic text-[14px] font-thin mt-1 text-orange-200 line-clamp-2">
+          <h4 className="title mt-4 text-h6 line-clamp-2">{post.title}</h4>
+          <div className="italic text-[14px] font-thin mt-1 text-orange-200 line-clamp-2">
             {post.subTitle}
           </div>
         </a>

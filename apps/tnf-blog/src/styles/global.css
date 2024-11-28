@@ -23,7 +23,11 @@
   --font-montserrat: 'Montserrat', sans-serif;
 }
 
-.bleed-px {
+body {
+  overflow-x: hidden;
+}
+
+/* .bleed-px {
   padding: 0 var(--container-px);
 
   @media (min-width: 834px) {
@@ -32,6 +36,30 @@
 
   @media (min-width: 1200px) {
     padding: 0 calc((var(--full-width) - var(--screen-lg)) / 2);
+  }
+} */
+
+.swiper-wrapper .swiper-slide:first-child {
+  padding-left: var(--container-px);
+
+  @media (min-width: 834px) {
+    padding-left: var(--container-px-md);
+  }
+
+  @media (min-width: 1200px) {
+    padding-left: calc((var(--full-width) - var(--screen-lg)) / 2);
+  }
+}
+
+.swiper-wrapper .swiper-slide:last-child {
+  padding-right: var(--container-px);
+
+  @media (min-width: 834px) {
+    padding-right: var(--container-px-md);
+  }
+
+  @media (min-width: 1200px) {
+    padding-right: calc((var(--full-width) - var(--screen-lg)) / 2);
   }
 }
 

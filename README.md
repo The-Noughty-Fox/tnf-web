@@ -10,6 +10,14 @@
 
 This project is deployed using AWS Amplify and can be managed through the [AWS Amplify Console](https://us-east-1.console.aws.amazon.com/amplify/apps/d2n2saym3iqalt/overview). The `tnf-landing` application is automatically deployed when changes are pushed to the main branch.
 
+### Blog Infrastructure
+
+The blog content is hosted using the following AWS services:
+
+- **S3 Bucket**: Blog files are stored in the [blog.thenoughtyfox.com](https://us-east-1.console.aws.amazon.com/s3/buckets/blog.thenoughtyfox.com) S3 bucket
+- **CloudFront**: Content is distributed through a [CloudFront distribution](https://us-east-1.console.aws.amazon.com/cloudfront/v4/home?region=us-east-1#/distributions/E23NKVPV2B0DLZ)
+- **GitHub Actions**: Automated deployments are configured to trigger on pushes to the main branch
+
 ### Domain Management
 
 The domain for this project is managed through [AWS Route 53](https://us-east-1.console.aws.amazon.com/route53/v2/hostedzones?region=us-east-1#ListRecordSets/Z032982169MDEWMQDI8M), which handles DNS configuration and routing.
