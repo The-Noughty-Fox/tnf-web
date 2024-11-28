@@ -17,6 +17,9 @@ type ContactsProps = {
 
 export const Contacts = ({ Icon, controlText = 'Write us' }: ContactsProps) => {
   const ref = useRef<HTMLDivElement>(null);
+  const pinRef = useRef<HTMLImageElement>(null);
+  const envelopeRef = useRef<HTMLImageElement>(null);
+  const phoneRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     if (ref.current) {
@@ -26,6 +29,27 @@ export const Contacts = ({ Icon, controlText = 'Write us' }: ContactsProps) => {
           start: 'top 80%',
           end: 'bottom 20%',
         },
+      });
+
+      const images = [
+        { ref: pinRef.current, yPercent: 30 },
+        { ref: envelopeRef.current, yPercent: -20 },
+        { ref: phoneRef.current, yPercent: 25 },
+      ];
+
+      images.forEach(({ ref, yPercent }) => {
+        if (ref) {
+          gsap.to(ref, {
+            yPercent,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: ref,
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: 1,
+            },
+          });
+        }
       });
     }
   }, []);
@@ -64,16 +88,19 @@ export const Contacts = ({ Icon, controlText = 'Write us' }: ContactsProps) => {
               </a>
             </div>
             <Image
+              ref={pinRef}
               src={PinSvg}
               alt=""
               className="-z-10 absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2"
             />
             <Image
+              ref={envelopeRef}
               src={EnvelopeSvg}
               alt=""
               className="-z-10 absolute top-1/2 right-0 translate-x-1/2 -translate-y-full"
             />
             <Image
+              ref={phoneRef}
               src={PhoneSvg}
               alt=""
               className="-z-10 absolute top-1/2 left-0 -translate-x-1/2"

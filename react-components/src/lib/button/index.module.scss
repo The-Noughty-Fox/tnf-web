@@ -1,6 +1,7 @@
 .btn {
   $this: &;
   @apply relative uppercase m-auto text-primary font-bold rounded-full whitespace-nowrap;
+  transition: transform .3s;
 
   &__ripple {
     @apply block absolute inset-0 z-10 overflow-hidden;

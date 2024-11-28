@@ -51,6 +51,14 @@ body {
   }
 }
 
+.swiper-wrapper {
+  @apply pb-8;
+}
+
+.swiper-wrapper .swiper-slide:not(:last-child) {
+  @apply mr-8;
+}
+
 .swiper-wrapper .swiper-slide:last-child {
   padding-right: var(--container-px);
 
@@ -61,6 +69,10 @@ body {
   @media (min-width: 1200px) {
     padding-right: calc((var(--full-width) - var(--screen-lg)) / 2);
   }
+}
+
+.swiper-pagination-bullet {
+  @apply bg-primary;
 }
 
 

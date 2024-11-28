@@ -7,14 +7,17 @@ export const registerBubbleUpEffect = () => {
       targets: HTMLElement | HTMLElement[],
       config: gsap.TimelineVars
     ) => {
+      gsap.set(targets, { willChange: 'transform, opacity' });
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: targets,
           start: 'top 90%',
+          once: true,
         },
         ...config,
       });
-      gsap.set(targets, { willChange: 'transform' });
+
       tl.fromTo(
         targets,
         {
@@ -28,6 +31,9 @@ export const registerBubbleUpEffect = () => {
           ease: 'expo.out',
           stagger: 0.1,
           onComplete: () => {
+            gsap.set(targets, { clearProps: 'willChange' });
+          },
+          onInterrupt: () => {
             gsap.set(targets, { clearProps: 'willChange' });
           },
         }

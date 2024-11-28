@@ -7,6 +7,7 @@ import { UpworkSvg } from './icons/upwork-svg';
 import { InSvg } from './icons/in-svg';
 import { GithubSvg } from './icons/github-svg';
 import { MarqueeLine } from './marquee-line';
+import styles from './footer.module.scss';
 
 const socials = [
   { href: 'https://clutch.co/profile/noughty-fox#highlights', Icon: ClutchSvg },
@@ -38,11 +39,7 @@ export const Footer = ({
           <Logo href={linkToHome} />
           <div className="flex gap-3">
             {socials.map(({ Icon, href }) => (
-              <a
-                key={href}
-                className="w-9 h-9 rounded-full bg-[rgba(255,255,255,0.1)] cursor-pointer flex items-center justify-center hover:bg-primary transition-colors duration-500"
-                href={href}
-              >
+              <a key={href} className={styles.social} href={href}>
                 <Icon />
               </a>
             ))}

@@ -17,6 +17,7 @@ export const TheFox = ({ className }: TheFoxProps) => {
       document.querySelectorAll('#the-fox__gradient stop')
     );
 
+    gsap.set(stop2, { willChange: 'stop-color, stop-opacity' });
     gsap.set(gradient, { transformOrigin: 'center center' });
     const tl = gsap.timeline();
 

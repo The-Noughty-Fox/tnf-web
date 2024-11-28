@@ -6,6 +6,7 @@ import { Domain } from './domain';
 import { ReactNode } from 'react';
 import { text } from '@tnf-workspace/ts-lib';
 import NextLink from 'next/link';
+import styles from '../index.module.scss';
 
 type DesktopProps = {
   TitleLogo: ReactNode;
@@ -20,6 +21,7 @@ type DesktopProps = {
     twDomainIndicatorColor?: string;
     twDomainTextColor?: string;
     twCtaTextColor?: string;
+    twCtaBgColor?: string;
   };
   img: {
     desktop: {
@@ -53,10 +55,14 @@ export const Desktop = ({
     twTheme?.twTextColor || 'text-current-color',
     'text-16*24 font-semibold mt-2 md:mt-3'
   );
+  console.log({
+    description,
+    twTheme,
+  });
   const ctaClasses = clsx(
-    'inline-flex items-center gap-2 py-4 px-6 rounded-4 mt-auto md:mt-6 md:mb-auto',
-    'leading-1 font-bold bg-woodsmoke-50',
-    twTheme?.twCtaTextColor || 'text-current-color'
+    styles.link,
+    twTheme?.twCtaTextColor || 'text-current-color',
+    twTheme?.twCtaBgColor || 'bg-woodsmoke-50'
   );
 
   return (
@@ -86,9 +92,20 @@ export const Desktop = ({
             <div className="flex flex-col items-start my-auto">
               <div className="mt-auto">{TitleLogo}</div>
               <div className={descriptionClasses}>{description}</div>
-              <NextLink className={ctaClasses} href={link}>
-                <span>{text.view_case_study}</span>
-                <ArrowUpRightSvg width={20} height={20} />
+              <NextLink
+                data-text={text.view_case_study}
+                className={ctaClasses}
+                href={link}
+              >
+                <div className="overflow-hidden flex justify-center items-center gap-2">
+                  <span
+                    data-text={text.view_case_study}
+                    className={styles.link__text}
+                  >
+                    {text.view_case_study}
+                  </span>
+                  <ArrowUpRightSvg width={20} height={20} />
+                </div>
               </NextLink>
             </div>
           </div>

@@ -94,3 +94,39 @@ button {
   color: inherit;
 }
 
+.swiper-wrapper .swiper-slide:not(:last-child) {
+  @apply mr-8;
+}
+
+.swiper-wrapper .swiper-slide:first-child {
+  padding-left: var(--container-px);
+
+  @media (min-width: 834px) {
+    padding-left: var(--container-px-md);
+  }
+
+  @media (min-width: 1200px) {
+    padding-left: var(--container-px-lg);
+  }
+
+  @media (min-width: 1440px) {
+    padding-left: calc((var(--full-width) - var(--screen-xl)) / 2 + var(--container-px-lg));
+  }
+}
+
+.swiper-wrapper .swiper-slide:last-child {
+  padding-right: var(--container-px);
+
+  @media (min-width: 834px) {
+    padding-right: var(--container-px-md);
+  }
+
+  @media (min-width: 1200px) {
+    padding-right: var(--container-px-lg);
+  }
+
+  @media (min-width: 1440px) {
+      padding-right: calc((var(--full-width) - var(--screen-xl)) / 2 + var(--container-px-lg));
+  }
+}
+

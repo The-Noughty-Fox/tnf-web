@@ -95,7 +95,7 @@ export const OurApproachList = () => {
       item.addEventListener('mouseenter', handleMouseEnter);
       item.addEventListener('mouseleave', handleMouseLeave);
 
-      master.fromTo(item, { scale: 1 }, { scale: 1.05, duration: 0.75 });
+      master.fromTo(item, { scale: 1 }, { scale: 1.05, duration: 0.175 });
 
       return {
         item,

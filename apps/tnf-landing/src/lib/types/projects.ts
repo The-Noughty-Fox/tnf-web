@@ -9,7 +9,7 @@ export const projects = [
   'poolex',
   'pvolve',
   'testapp',
-  'secretmessages'
+  'secretmessages',
 ] as const;
 
 export type ProjectCardProps = {
@@ -26,6 +26,7 @@ export type ProjectCardProps = {
     twDomainIndicatorColor?: string;
     twDomainTextColor?: string;
     twCtaTextColor?: string;
+    twCtaBgColor?: string;
   };
   link: string;
   img: {

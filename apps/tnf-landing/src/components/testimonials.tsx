@@ -5,6 +5,7 @@ import { Heading } from './heading';
 import { text } from '../lib/text';
 import { Slider } from './slider';
 import Image, { StaticImageData } from 'next/image';
+import { clampValue } from '@tnf-workspace/ts-lib';
 
 type TestimonialsProps = {
   testimonials: {
@@ -34,7 +35,7 @@ export const Testimonials = ({ testimonials }: TestimonialsProps) => {
   }, []);
 
   return (
-    <div className="px-4">
+    <div>
       <Heading text={text.testimonials} />
       <div ref={ref} className="mt-12">
         <Slider>
@@ -43,7 +44,12 @@ export const Testimonials = ({ testimonials }: TestimonialsProps) => {
               key={index}
               className="flex flex-col justify-between h-full py-8 md:py-15 px-6 md:px-12 rounded-6 md:rounded-10 shadow-main border-1 border-orange-400"
               style={{
-                maxWidth: 'min(80vw, 586px)',
+                width: clampValue({
+                  minSize: 320,
+                  maxSize: 586,
+                  minScreen: 320,
+                  maxScreen: 1920,
+                }),
               }}
             >
               <div>&quot;{testimonial.text}&quot;</div>

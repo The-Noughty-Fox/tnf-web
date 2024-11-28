@@ -228,7 +228,8 @@ export const projectCards: ProjectCardType[] = [
     twTheme: {
       twDomainIndicatorColor: 'bg-woodsmoke-900',
       twTextColor: 'text-woodsmoke-600',
-      twCtaTextColor: 'bg-woodsmoke-950',
+      twCtaTextColor: 'text-woodsmoke-50',
+      twCtaBgColor: 'bg-woodsmoke-950',
       twDomainTextColor: 'text-woodsmoke-900',
     },
     platform: ['web'],

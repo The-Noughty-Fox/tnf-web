@@ -1,0 +1,28 @@
+.link {
+    $this: &;
+    @apply py-4 px-6 rounded-4 mt-auto md:mt-6 md:mb-auto leading-1 font-bold;
+    transition: transform .3s;
+
+    @media (pointer: fine) {
+        &:hover {
+            transform:scaleX(1.02);
+            transition: transform .6s cubic-bezier(.34,5.56,.64,1);
+      
+        #{$this}__text {
+            transform: translateY(calc(-100% - 8px));
+        }
+      }
+    }
+
+    &__text {
+        @apply relative translate-y-0 z-20;
+        transition: transform .8s cubic-bezier(.16,1,.3,1);
+
+        &:after {
+          content: attr(data-text);
+          @apply absolute top-2 left-0 right-0;
+          transform: translateY(100%);
+          color: var(--btn-highlight-color);
+        }
+      }
+}
