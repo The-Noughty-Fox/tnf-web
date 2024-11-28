@@ -11,7 +11,6 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: production
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -28,19 +27,12 @@ jobs:
       - name: Build application
         run: npm run blog:build
 
-      - name: Debug
-        run: |
-          echo "AWS Region length: ${#AWS_REGION}"
-          echo "AWS Account ID length: ${#AWS_ACCOUNT_ID}"
-        env:
-          AWS_REGION: ${{ secrets.AWS_REGION }}
-          AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
-
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/tnf-web-github-actions
           aws-region: ${{ secrets.AWS_REGION }}
+          audience: sts.amazonaws.com
 
       - name: Deploy to S3
         run: |
