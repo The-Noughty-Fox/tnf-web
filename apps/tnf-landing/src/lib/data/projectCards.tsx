@@ -12,7 +12,7 @@ import PvolveImg_mobile from '../../assets/portfolio/pvolve/pvolve_mobile.jpg';
 import PvolveImg_bg from '../../assets/portfolio/pvolve/pvolve_bg.png';
 import TestAppImg_main from '../../assets/portfolio/testapp/testapp_main.jpg';
 import TestAppImg_title from '../../assets/portfolio/testapp/testapp_title.png';
-import TestAppImg_mobile from '../../assets/portfolio/testapp/testapp_mobile.webp';
+import TestAppImg_mobile from '../../assets/portfolio/testapp/testapp_mobile.jpg';
 import SecretMessagesImg_main from '../../assets/portfolio/secretmessages/secretmessages_main.png';
 // import TestAppImg_title from '../../assets/portfolio/testapp/testapp_title.png';
 import SecretMessagesImg_mobile from '../../assets/portfolio/secretmessages/secretmessages_mobile.webp';
