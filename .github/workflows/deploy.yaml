@@ -26,6 +26,10 @@ jobs:
 
       - name: Build application
         run: npm run blog:build
+        env:
+          PUBLIC_TNF_DOMAIN: ${{ secrets.PUBLIC_TNF_DOMAIN }}
+          PUBLIC_HOME_PAGE: ${{ secrets.PUBLIC_TNF_DOMAIN }}
+          PUBLIC_CONTACT_US_PAGE: ${{ secrets.PUBLIC_TNF_DOMAIN }}/contact-us
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
